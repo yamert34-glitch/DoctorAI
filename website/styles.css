@@ -333,6 +333,35 @@ h2 em, h1 em { color: var(--blue); font-weight: 400; }
   }
 }
 
+.header-identity {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 16px;
+}
+.view-counter {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  line-height: 0;
+}
+.view-counter img {
+  display: block;
+  width: auto;
+  height: 22px;
+}
+
+@media (max-width: 1100px) {
+  .header-identity { gap: 10px; }
+}
+
+@media (max-width: 700px) {
+  .header-identity { gap: 8px; }
+  .view-counter img { height: 20px; }
+  .wordmark { font-size: 18px; }
+  .wordmark-mark { width: 32px; height: 32px; font-size: 20px; }
+}
+
 /* Applied design-system layer: quiet surfaces, real project evidence, clear status. */
 :root {
   --dp-color-ground: #fcfcfd;
