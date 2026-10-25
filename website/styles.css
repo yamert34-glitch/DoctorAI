@@ -157,7 +157,7 @@ h2 em, h1 em { color: var(--blue); font-weight: 400; }
 }
 .hero-visual > img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .photo-caption { position: absolute; right: 0; bottom: 0; left: 0; display: flex; min-height: 40px; align-items: center; justify-content: space-between; gap: 12px; padding: 7px 12px; color: white; background: var(--burgundy); font: 11px var(--mono); letter-spacing: .06em; }
-.hero-bottom { display: flex; max-width: var(--measure); min-height: 54px; align-items: center; justify-content: space-between; margin: 42px auto 0; border-top: 1px solid var(--line); color: #4f667a; font: 10px var(--mono); letter-spacing: .06em; }
+.hero-bottom { display: flex; max-width: var(--measure); min-height: 54px; align-items: center; justify-content: space-between; margin: 42px auto 0; border-top: 1px solid var(--line); color: #4f667a; font: 11px var(--mono); letter-spacing: .06em; }
 
 .project { background: var(--paper); }
 .section-label { margin-bottom: 25px; }
@@ -171,7 +171,7 @@ h2 em, h1 em { color: var(--blue); font-weight: 400; }
 .project-ribbon { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 57px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .project-ribbon > div { position: relative; min-height: 133px; padding: 22px 28px 17px 0; }
 .project-ribbon > div + div { padding-left: 27px; border-left: 1px solid var(--line); }
-.project-ribbon span { display: block; margin-bottom: 10px; color: var(--red); font: 9px var(--mono); }
+.project-ribbon span { display: block; margin-bottom: 10px; color: var(--red); font: 12px var(--mono); }
 .project-ribbon b { color: var(--navy); font-size: 17px; }
 .project-ribbon p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
 
@@ -266,7 +266,7 @@ h2 em, h1 em { color: var(--blue); font-weight: 400; }
   .hero { padding: 46px 20px 0; }
   .hero-layout { grid-template-columns: 1fr; gap: 30px; min-height: 0; }
   .hero-copy { padding: 0; }
-  .eyebrow { gap: 8px; font-size: 10px; }
+  .eyebrow { gap: 8px; font-size: 11px; }
   .eyebrow-mark { width: 28px; height: 28px; }
   .hero h1 { margin: 22px 0 16px; font-size: clamp(44px, 11.6vw, 61px); }
   .hero-description { max-width: 520px; font-size: 16px; }
@@ -275,9 +275,9 @@ h2 em, h1 em { color: var(--blue); font-weight: 400; }
   .text-link { font-size: 13px; }
   .hero-footnote { margin-top: 18px; font-size: 12px; }
   .hero-visual { width: min(100%, 430px); justify-self: center; }
-  .hero-bottom { min-height: 54px; flex-wrap: wrap; justify-content: space-between; gap: 6px 12px; margin-top: 25px; padding-block: 12px; font-size: 9px; }
+  .hero-bottom { min-height: 54px; flex-wrap: wrap; justify-content: space-between; gap: 6px 12px; margin-top: 25px; padding-block: 12px; font-size: 11px; }
   .hero-bottom span:nth-child(2) { order: 3; width: 100%; }
-  .section-label { margin-bottom: 18px; font-size: 10px; }
+  .section-label { margin-bottom: 18px; font-size: 11px; }
   .project-intro, .approach-heading, .process-heading, .technology-heading, .team-layout { grid-template-columns: 1fr; gap: 21px; }
   .project h2, .approach h2, .technology h2, .team h2 { font-size: clamp(38px, 9vw, 49px); }
   .project-copy { font-size: 15px; }
@@ -304,12 +304,12 @@ h2 em, h1 em { color: var(--blue); font-weight: 400; }
   .technology-row { grid-template-columns: 1fr auto; gap: 4px 12px; min-height: 0; padding-block: 12px; }
   .technology-row b { font-size: 15px; }
   .technology-row span { grid-row: 2; font-size: 13px; }
-  .technology-row small { grid-column: 2; grid-row: 1; font-size: 10px; }
+  .technology-row small { grid-column: 2; grid-row: 1; font-size: 11px; }
   .hardware-note { align-items: flex-start; gap: 11px; }
   .hardware-note p { font-size: 13px; }
   .team-layout { gap: 27px; }
   .team-details > div { grid-template-columns: 95px 1fr; gap: 9px; padding-block: 13px; }
-  .team-details span { font-size: 10px; }
+  .team-details span { font-size: 11px; }
   .team-details b { font-size: 14px; }
   .site-footer { min-height: 0; flex-wrap: wrap; gap: 12px; padding: 19px 20px; }
   .site-footer p { order: 3; width: 100%; font-size: 12px; }
