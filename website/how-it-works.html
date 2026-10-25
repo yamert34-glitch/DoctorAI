@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Explore Doctor AI's guided check-in, local language-model assessment, and rapid phrase-based escalation flow." />
+    <meta name="theme-color" content="#fcfcfd" />
+    <title>How It Works | Doctor AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=7" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="index.html#top" aria-label="Doctor AI home"><span class="wordmark-mark" aria-hidden="true">D</span><span>DOCTOR <b>AI</b></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Toggle navigation</span><svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M4 7h16M4 17h16" /></svg></button>
+      <nav class="site-nav" id="site-nav" aria-label="Project pages">
+        <a href="index.html">Overview</a><a href="how-it-works.html" aria-current="page">How it works</a><a href="design-process.html">Design process</a><a href="technology.html">Technology</a><a href="team.html">Our team</a>
+      </nav>
+      <a class="header-link" href="index.html#project">NASA HUNCH <svg class="icon" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M5 11 11 5M5 5h6v6" /></svg></a>
+    </header>
+    <main id="main">
+      <section class="page-lead section-pad" id="top">
+        <div class="section-wrap">
+          <div class="section-label"><span>01</span> THE WORKFLOW</div>
+          <h1>From symptoms to<br /><em>an assessment.</em></h1>
+          <p>The working flow gathers health information, consults a local language model with medical-reference context, then presents an assessment for review.</p>
+        </div>
+      </section>
+      <section class="approach section-pad" id="approach">
+        <div class="section-wrap">
+          <div class="section-label"><span>HOW IT WORKS</span></div>
+          <div class="approach-heading">
+            <h2>A guided check-in,<br /><em>step by step.</em></h2>
+            <p>The local LLM uses questionnaire answers, its system instructions, and medical-reference excerpts to generate possible explanations and steps to consider.</p>
+          </div>
+          <ol class="steps">
+            <li><span class="step-number">01</span><div><h3>Choose a profile</h3><p>Start a local profile or select an existing one. Face matching is an experimental profile-selection option.</p></div></li>
+            <li><span class="step-number">02</span><div><h3>Answer guided questions</h3><p>Share symptoms, when they began, relevant history, medications, and other requested details.</p></div></li>
+            <li><span class="step-number">03</span><div><h3>Generate an LLM assessment</h3><p>The local language model considers the answers alongside its system instructions and medical-reference excerpts, then suggests possible conditions and next steps.</p></div></li>
+            <li><span class="step-number">04</span><div><h3>Review and follow protocol</h3><p>Review the AI-generated assessment as a possibility, not a certainty. Follow onboard medical protocol for care decisions.</p></div></li>
+          </ol>
+          <aside class="urgent-path" aria-labelledby="urgent-path-title">
+            <div class="urgent-path-label">FAST ESCALATION · PROTOTYPE FEATURE</div>
+            <h3 id="urgent-path-title">Serious phrases can bypass model wait time.</h3>
+            <p>Before a model assessment, a local phrase checker scans answers for configured high-risk terms and symptom phrases—for example, reports involving blood or severe chest and heart symptoms. When it finds a match, the prototype skips model generation and immediately displays a fixed urgent warning: the reported symptoms may indicate a very serious situation, and the user should follow the onboard medical protocol.</p>
+            <p>In current team testing, a model-generated assessment can take about 1 minute 40 seconds. For a matched phrase, the direct-message path is designed to respond in under 1–2 seconds instead of waiting for generation.</p>
+            <p class="urgent-path-caveat">This phrase checker is an early safeguard, not a complete emergency detector: it may miss urgent wording or match a phrase without understanding context. No alert does not mean a situation is safe. Follow onboard protocol whenever symptoms are concerning.</p>
+          </aside>
+          <p class="ai-note">
+            <svg class="icon ai-note-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><circle cx="10" cy="10" r="8" /><path d="M10 9v5m0-8h.01" /></svg>
+            AI-generated possibilities may be wrong or incomplete. Use the prototype's output as information for review, not as a confirmed diagnosis.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <a class="wordmark" href="index.html#top"><span class="wordmark-mark" aria-hidden="true">D</span><span>DOCTOR <b>AI</b></span></a><p>A NASA HUNCH student engineering project.</p><a href="index.html#top">Back to overview <svg class="icon" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M8 14V3m-4 4 4-4 4 4" /></svg></a>
+    </footer>
+  </body>
+</html>

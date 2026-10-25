@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Explore the C++ application, local LLM, interface, and hardware tools used in the Doctor AI NASA HUNCH project." />
+    <meta name="theme-color" content="#fcfcfd" />
+    <title>Technology | Doctor AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=7" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="index.html#top" aria-label="Doctor AI home"><span class="wordmark-mark" aria-hidden="true">D</span><span>DOCTOR <b>AI</b></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Toggle navigation</span><svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M4 7h16M4 17h16" /></svg></button>
+      <nav class="site-nav" id="site-nav" aria-label="Project pages">
+        <a href="index.html">Overview</a><a href="how-it-works.html">How it works</a><a href="design-process.html">Design process</a><a href="technology.html" aria-current="page">Technology</a><a href="team.html">Our team</a>
+      </nav>
+      <a class="header-link" href="index.html#project">NASA HUNCH <svg class="icon" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M5 11 11 5M5 5h6v6" /></svg></a>
+    </header>
+    <main id="main">
+      <section class="page-lead section-pad" id="top">
+        <div class="section-wrap">
+          <div class="section-label"><span>03</span> ENGINEERING & TECHNOLOGY</div>
+          <h1>Built with tools<br />we can <em>learn from.</em></h1>
+          <p>The working application combines a guided C++ workflow with local language-model inference. Interface and sensor experiments extend the core assessment.</p>
+        </div>
+      </section>
+      <section class="technology section-pad" id="technology">
+        <div class="section-wrap">
+          <div class="section-label"><span>SOFTWARE & HARDWARE</span></div>
+          <div class="technology-list">
+            <div class="technology-row"><b>C++17 + CMake</b><span>Main application, assessment flow, and build configuration.</span><small>CORE</small></div>
+            <div class="technology-row"><b>llama.cpp + ggml</b><span>Core local language-model inference for questionnaire-based assessment with medical-reference context.</span><small>CORE</small></div>
+            <div class="technology-row"><b>Qt 6 Widgets</b><span>Touchscreen interface in configured builds.</span><small>OPTIONAL</small></div>
+            <div class="technology-row"><b>OpenCV</b><span>Face detection and template matching for profile selection.</span><small>EXPERIMENTAL</small></div>
+            <div class="technology-row"><b>OpenSSL + JSON</b><span>Encrypted assessment payloads and structured local data.</span><small>LOCAL DATA</small></div>
+            <div class="technology-row"><b>ESP32-S3</b><span>Separate pulse-sensor firmware experiment.</span><small>EXPERIMENTAL</small></div>
+          </div>
+          <div class="hardware-note">
+            <span class="hardware-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" focusable="false"><rect x="7" y="7" width="10" height="10" /><path d="M9 2v5m6-5v5m-6 10v5m6-5v5M2 9h5m10 0h5M2 15h5m10 0h5" /></svg></span>
+            <p><b>Built and tested on regular computers.</b> Raspberry Pi/Linux is a target environment; current software has not been tested on spacecraft hardware.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <a class="wordmark" href="index.html#top"><span class="wordmark-mark" aria-hidden="true">D</span><span>DOCTOR <b>AI</b></span></a><p>A NASA HUNCH student engineering project.</p><a href="index.html#top">Back to overview <svg class="icon" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M8 14V3m-4 4 4-4 4 4" /></svg></a>
+    </footer>
+  </body>
+</html>

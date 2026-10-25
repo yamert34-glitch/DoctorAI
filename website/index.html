@@ -12,35 +12,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=5" />
+    <link rel="stylesheet" href="styles.css?v=7" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-
     <header class="site-header">
-      <a class="wordmark" href="#top" aria-label="Doctor AI home">
+      <a class="wordmark" href="index.html#top" aria-label="Doctor AI home">
         <span class="wordmark-mark" aria-hidden="true">D</span>
         <span>DOCTOR <b>AI</b></span>
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
         <span class="sr-only">Toggle navigation</span>
-        <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
-          <path d="M4 7h16M4 17h16" />
-        </svg>
+        <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M4 7h16M4 17h16" /></svg>
       </button>
-      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-        <a href="#project">The project</a>
-        <a href="#approach">How it works</a>
-        <a href="#process">Design process</a>
-        <a href="#technology">Technology</a>
-        <a href="#team">Our team</a>
+      <nav class="site-nav" id="site-nav" aria-label="Project pages">
+        <a href="index.html" aria-current="page">Overview</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="design-process.html">Design process</a>
+        <a href="technology.html">Technology</a>
+        <a href="team.html">Our team</a>
       </nav>
-      <a class="header-link" href="#project">
+      <a class="header-link" href="index.html#project">
         NASA HUNCH
-        <svg class="icon" aria-hidden="true" viewBox="0 0 16 16" focusable="false">
-          <path d="M5 11 11 5M5 5h6v6" />
-        </svg>
+        <svg class="icon" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M5 11 11 5M5 5h6v6" /></svg>
       </a>
     </header>
 
@@ -66,25 +61,17 @@
             <div class="hero-actions">
               <a class="button button-primary" href="#project">
                 Meet Doctor AI
-                <svg class="icon" aria-hidden="true" viewBox="0 0 16 16" focusable="false">
-                  <path d="M8 2v11m-4-4 4 4 4-4" />
-                </svg>
+                <svg class="icon" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M8 2v11m-4-4 4 4 4-4" /></svg>
               </a>
-              <a class="text-link" href="#approach">
+              <a class="text-link" href="how-it-works.html">
                 See how it works
-                <svg class="icon" aria-hidden="true" viewBox="0 0 16 16" focusable="false">
-                  <path d="M2 8h11m-4-4 4 4-4 4" />
-                </svg>
+                <svg class="icon" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M2 8h11m-4-4 4 4-4 4" /></svg>
               </a>
             </div>
             <p class="hero-footnote">A complete student-built prototype, presented at NASA HUNCH PDR.</p>
           </div>
-
           <div class="hero-visual" aria-label="Photo of the Doctor AI hardware prototype">
-            <img
-              src="assets/doctorai%20prototype.png"
-              alt="Doctor AI student prototype with a touchscreen, keyboard, camera, and connected sensor board"
-            />
+            <img src="assets/doctorai%20prototype.png" alt="Doctor AI student prototype with a touchscreen, keyboard, camera, and connected sensor board" />
             <div class="photo-caption"><span>DOCTOR AI</span><span>WORKING PROTOTYPE</span></div>
           </div>
         </div>
@@ -146,210 +133,12 @@
           </div>
         </div>
       </section>
-
-      <section class="approach section-pad" id="approach">
-        <div class="section-wrap">
-          <div class="section-label"><span>02</span> HOW IT WORKS</div>
-          <div class="approach-heading">
-            <h2>From symptoms to<br /><em>an assessment.</em></h2>
-            <p>
-              The local LLM uses questionnaire answers, its system instructions, and
-              medical-reference excerpts to generate possible explanations and steps to
-              consider.
-            </p>
-          </div>
-          <ol class="steps">
-            <li>
-              <span class="step-number">01</span>
-              <div><h3>Choose a profile</h3><p>Start a local profile or select an existing one. Face matching is an experimental profile-selection option.</p></div>
-            </li>
-            <li>
-              <span class="step-number">02</span>
-              <div><h3>Answer guided questions</h3><p>Share symptoms, when they began, relevant history, medications, and other requested details.</p></div>
-            </li>
-            <li>
-              <span class="step-number">03</span>
-              <div><h3>Generate an LLM assessment</h3><p>The local language model considers the answers alongside its system instructions and medical-reference excerpts, then suggests possible conditions and next steps.</p></div>
-            </li>
-            <li>
-              <span class="step-number">04</span>
-              <div><h3>Review and follow protocol</h3><p>Review the AI-generated assessment as a possibility, not a certainty. Follow onboard medical protocol for care decisions.</p></div>
-            </li>
-          </ol>
-          <aside class="urgent-path" aria-labelledby="urgent-path-title">
-            <div class="urgent-path-label">FAST ESCALATION · PROTOTYPE FEATURE</div>
-            <h3 id="urgent-path-title">Serious phrases can bypass model wait time.</h3>
-            <p>
-              Before a model assessment, a local phrase checker scans answers for configured
-              high-risk terms and symptom phrases—for example, reports involving blood or
-              severe chest and heart symptoms. When it finds a match, the prototype skips
-              model generation and immediately displays a fixed urgent warning: the
-              reported symptoms may indicate a very serious situation, and the user should
-              follow the onboard medical protocol.
-            </p>
-            <p>
-              In current team testing, a model-generated assessment can take about 1 minute
-              40 seconds. For a matched phrase, the direct-message path is designed to
-              respond in under 1–2 seconds instead of waiting for generation.
-            </p>
-            <p class="urgent-path-caveat">
-              This phrase checker is an early safeguard, not a complete emergency detector:
-              it may miss urgent wording or match a phrase without understanding context.
-              No alert does not mean a situation is safe. Follow onboard protocol whenever
-              symptoms are concerning.
-            </p>
-          </aside>
-          <p class="ai-note">
-            <svg class="icon ai-note-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
-              <circle cx="10" cy="10" r="8" />
-              <path d="M10 9v5m0-8h.01" />
-            </svg>
-            AI-generated possibilities may be wrong or incomplete. Use the prototype's output as information for review, not as a confirmed diagnosis.
-          </p>
-        </div>
-      </section>
-
-      <section class="process section-pad" id="process">
-        <div class="section-wrap">
-          <div class="section-label"><span>03</span> FROM IDEAS TO PROTOTYPES</div>
-          <div class="process-heading">
-            <h2>Sketches, builds<br />and <em>next steps.</em></h2>
-            <p>
-              These are real project artifacts—from the first interface sketches to
-              hardware on the bench. Concepts show directions explored, not features
-              that are already built.
-            </p>
-          </div>
-          <div class="project-gallery">
-            <figure class="gallery-feature">
-              <div class="gallery-image">
-                <img
-                  src="assets/doctorai%20prototype.png"
-                  alt="Doctor AI prototype assembled from a touchscreen, keyboard, camera, and sensor board"
-                  loading="lazy"
-                />
-                <span class="gallery-kind">BUILT HARDWARE</span>
-              </div>
-              <figcaption><b>Doctor AI hardware prototype</b><span>Touchscreen · camera · sensor board</span></figcaption>
-            </figure>
-            <figure>
-              <div class="gallery-image">
-                <img
-                  src="assets/brainstorming1.png"
-                  alt="Hand-drawn mini desk buddy concept with a screen, voice and touch input, and health-data notes"
-                  loading="lazy"
-                />
-                <span class="gallery-kind">INTERFACE SKETCH</span>
-              </div>
-              <figcaption><b>Mini desk-buddy concept</b><span>Early voice-and-touch interface idea</span></figcaption>
-            </figure>
-            <figure>
-              <div class="gallery-image">
-                <img
-                  src="assets/brainstorming2.png"
-                  alt="Hand-drawn wearable physiological monitor concept with an AI system and health readings"
-                  loading="lazy"
-                />
-                <span class="gallery-kind">WEARABLE CONCEPT</span>
-              </div>
-              <figcaption><b>Physiological monitor</b><span>Wearable health-data concept</span></figcaption>
-            </figure>
-            <figure>
-              <div class="gallery-image">
-                <img
-                  src="assets/brainstorming3.png"
-                  alt="Hand-drawn watch concept annotated with health sensors and readings"
-                  loading="lazy"
-                />
-                <span class="gallery-kind">WATCH STUDY</span>
-              </div>
-              <figcaption><b>Health-monitoring watch</b><span>Sensor and display exploration</span></figcaption>
-            </figure>
-            <figure>
-              <div class="gallery-image">
-                <img
-                  src="assets/screencasecad.png"
-                  alt="CAD render of a proposed turquoise enclosure for a touchscreen device"
-                  loading="lazy"
-                />
-                <span class="gallery-kind">ENCLOSURE CAD</span>
-              </div>
-              <figcaption><b>Screen enclosure</b><span>CAD concept for the device case</span></figcaption>
-            </figure>
-            <figure>
-              <div class="gallery-image">
-                <img
-                  src="assets/pillcounter%20prototype.png"
-                  alt="CAD render of two parts for a separate pill-counter prototype"
-                  loading="lazy"
-                />
-                <span class="gallery-kind">RELATED PROTOTYPE</span>
-              </div>
-              <figcaption><b>Pill-counter prototype</b><span>Separate hardware exploration</span></figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      <section class="technology section-pad" id="technology">
-        <div class="section-wrap">
-          <div class="section-label"><span>04</span> ENGINEERING & TECHNOLOGY</div>
-          <div class="technology-heading">
-            <h2>Built with tools<br />we can <em>learn from.</em></h2>
-            <p>
-              The working application combines a guided C++ workflow with local language-model
-              inference. Interface and sensor experiments extend the core assessment.
-            </p>
-          </div>
-          <div class="technology-list">
-            <div class="technology-row"><b>C++17 + CMake</b><span>Main application, assessment flow, and build configuration.</span><small>CORE</small></div>
-            <div class="technology-row"><b>llama.cpp + ggml</b><span>Core local language-model inference for questionnaire-based assessment with medical-reference context.</span><small>CORE</small></div>
-            <div class="technology-row"><b>Qt 6 Widgets</b><span>Touchscreen interface in configured builds.</span><small>OPTIONAL</small></div>
-            <div class="technology-row"><b>OpenCV</b><span>Face detection and template matching for profile selection.</span><small>EXPERIMENTAL</small></div>
-            <div class="technology-row"><b>OpenSSL + JSON</b><span>Encrypted assessment payloads and structured local data.</span><small>LOCAL DATA</small></div>
-            <div class="technology-row"><b>ESP32-S3</b><span>Separate pulse-sensor firmware experiment.</span><small>EXPERIMENTAL</small></div>
-          </div>
-          <div class="hardware-note">
-            <span class="hardware-icon" aria-hidden="true">
-              <svg class="icon" viewBox="0 0 24 24" focusable="false">
-                <rect x="7" y="7" width="10" height="10" />
-                <path d="M9 2v5m6-5v5m-6 10v5m6-5v5M2 9h5m10 0h5M2 15h5m10 0h5" />
-              </svg>
-            </span>
-            <p><b>Built and tested on regular computers.</b> Raspberry Pi/Linux is a target environment; current software has not been tested on spacecraft hardware.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="team section-pad" id="team">
-        <div class="section-wrap team-layout">
-          <div>
-            <div class="section-label"><span>05</span> OUR NASA HUNCH PROJECT</div>
-            <h2>Student ideas,<br /><em>built together.</em></h2>
-            <p class="team-description">
-              Doctor AI is a student engineering project from Gladys Porter Early College
-              High School. We are learning through research, building, and testing.
-            </p>
-          </div>
-          <div class="team-details">
-            <div><span>PROJECT</span><b>NASA HUNCH · Doctor AI</b></div>
-            <div><span>TEAM</span><b>Krystal Olivarez<br />Kimora Lee<br />Ramon Torres</b></div>
-            <div><span>SCHOOL</span><b>Gladys Porter Early College High School</b></div>
-            <div><span>PROJECT YEAR</span><b>2026–2027</b></div>
-          </div>
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer">
-      <a class="wordmark" href="#top"><span class="wordmark-mark" aria-hidden="true">D</span><span>DOCTOR <b>AI</b></span></a>
+      <a class="wordmark" href="index.html#top"><span class="wordmark-mark" aria-hidden="true">D</span><span>DOCTOR <b>AI</b></span></a>
       <p>A NASA HUNCH student engineering project.</p>
-      <a href="#top">
-        Back to top
-        <svg class="icon" aria-hidden="true" viewBox="0 0 16 16" focusable="false">
-          <path d="M8 14V3m-4 4 4-4 4 4" />
-        </svg>
-      </a>
+      <a href="index.html#top">Back to overview <svg class="icon" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M8 14V3m-4 4 4-4 4 4" /></svg></a>
     </footer>
   </body>
 </html>
