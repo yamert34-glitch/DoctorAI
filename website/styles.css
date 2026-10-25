@@ -491,9 +491,9 @@ a:focus-visible, button:focus-visible { outline-color: var(--dp-color-accent); }
   background: var(--dp-color-panel);
   box-shadow: 0 8px 22px rgba(22, 25, 31, .045);
 }
-.status-tag { display: inline-flex; min-height: 26px; align-items: center; padding: 4px 9px; border: 1px solid #b7c9f4; border-radius: 999px; color: #0739a5; background: #edf2ff; font: 700 11px var(--sans); letter-spacing: .08em; }
-.status-testing { border-color: var(--dp-color-rule); color: var(--dp-color-ink-secondary); background: var(--dp-color-ground-muted); }
-.status-exploring { border-color: var(--dp-color-rule); color: var(--dp-color-ink-secondary); background: var(--dp-color-panel); }
+.status-tag { display: inline-flex; min-height: 28px; align-items: center; padding: 4px 10px; border: 1px solid #b7c9f4; border-radius: 999px; color: #0739a5; background: #edf2ff; font: 700 12px var(--sans); letter-spacing: .06em; }
+.status-working { border-color: #a9c4dc; color: #164f7d; background: #eaf3f9; }
+.status-next { border-color: var(--dp-color-rule); color: var(--dp-color-ink-secondary); background: var(--dp-color-panel); }
 .status-card h3 { margin: 18px 0 7px; color: var(--dp-color-ink); font-size: 22px; line-height: 1.15; }
 .status-card p { max-width: 38ch; margin: 0; color: var(--dp-color-ink-secondary); font-size: var(--dp-typography-small); line-height: 1.65; }
 

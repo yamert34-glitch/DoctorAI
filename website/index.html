@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Meet Doctor AI, an uncertified local diagnostic-support AI prototype from NASA HUNCH. It explores possible diagnoses, next steps, and rapid escalation to onboard medical protocols."
+      content="Meet Doctor AI, a working NASA HUNCH prototype using a locally run language model to organize health information and suggest possible next steps."
     />
     <meta name="theme-color" content="#fcfcfd" />
     <title>Doctor AI | NASA HUNCH Project</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=4" />
+    <link rel="stylesheet" href="styles.css?v=5" />
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -59,9 +59,9 @@
             </p>
             <h1>Medical support<br />for missions<br /><em>beyond Earth.</em></h1>
             <p class="hero-description">
-              Doctor AI is an uncertified, locally run diagnostic-support tool. It combines
-              questionnaire answers with system instructions and medical-reference excerpts
-              to suggest possible conditions and next steps for review.
+              Doctor AI is a working, offline-first prototype. A locally run language model
+              uses questionnaire answers, system instructions, and medical-reference
+              excerpts to suggest possible conditions and next steps.
             </p>
             <div class="hero-actions">
               <a class="button button-primary" href="#project">
@@ -77,7 +77,7 @@
                 </svg>
               </a>
             </div>
-            <p class="hero-footnote">An experimental student-built diagnostic prototype—not certified medical software.</p>
+            <p class="hero-footnote">A complete student-built prototype, presented at NASA HUNCH PDR.</p>
           </div>
 
           <div class="hero-visual" aria-label="Photo of the Doctor AI hardware prototype">
@@ -99,20 +99,20 @@
             <div class="project-copy">
               <p>
                 Long-distance missions can involve communication delays or periods without
-                contact. Doctor AI explores how an onboard tool could use a crew member’s
+                contact. Doctor AI demonstrates how an onboard tool can use a crew member’s
                 questionnaire answers and medical references to suggest possible diagnoses
                 and practical next steps while they wait to connect with mission control.
               </p>
               <p>
-                The locally run AI is uncertified and offers possible explanations—not a
-                confirmed diagnosis. Its assessment is informational only and never replaces
-                the onboard medical protocol or qualified medical guidance.
+                The prototype runs its language model locally, bringing the guided
+                questionnaire, reference context, and generated assessment together in one
+                working flow.
               </p>
             </div>
           </div>
           <div class="project-ribbon" aria-label="Project principles">
             <div><span>01</span><b>Designed for offline use</b><p>Core check-in flow runs locally.</p></div>
-            <div><span>02</span><b>Possible diagnosis</b><p>AI weighs answers against medical references.</p></div>
+            <div><span>02</span><b>LLM-assisted assessment</b><p>A local model uses answers and medical references.</p></div>
             <div><span>03</span><b>Built to keep learning</b><p>Testing and iteration guide the work.</p></div>
           </div>
         </div>
@@ -125,7 +125,7 @@
               <div class="section-label"><span>PROJECT STATUS</span></div>
               <h2 id="status-title">What exists today.</h2>
             </div>
-            <p>A quick, honest snapshot of the hardware and software work so far. Some capabilities are still experimental or depend on the build.</p>
+            <p>The complete guided assessment flow is working and was presented at NASA HUNCH PDR. The next iteration will narrow its medical scope.</p>
           </div>
           <div class="status-grid">
             <article class="status-card">
@@ -134,14 +134,14 @@
               <p>Touchscreen, keyboard, camera, and a connected sensor board assembled for hands-on development.</p>
             </article>
             <article class="status-card">
-              <span class="status-tag status-testing">IN DEVELOPMENT</span>
-              <h3>Local diagnostic support</h3>
-              <p>The C++ prototype combines questionnaire answers, system instructions, and medical-reference excerpts to suggest possible diagnoses and next steps.</p>
+              <span class="status-tag status-working">WORKING PROTOTYPE</span>
+              <h3>Local LLM assessment</h3>
+              <p>The end-to-end flow runs a local language model with questionnaire answers, system instructions, and medical-reference excerpts to generate a possible assessment and next steps.</p>
             </article>
             <article class="status-card">
-              <span class="status-tag status-exploring">EXPLORING</span>
-              <h3>Optional experiments</h3>
-              <p>Local language-model drafts, face-based profile selection, and wearable sensing remain optional or experimental.</p>
+              <span class="status-tag status-next">NEXT ITERATION</span>
+              <h3>Focus on one body system</h3>
+              <p>PDR judges encouraged us to focus the broad concept on a single body system. Choosing that focused scope is a key next step.</p>
             </article>
           </div>
         </div>
@@ -153,9 +153,9 @@
           <div class="approach-heading">
             <h2>From symptoms to<br /><em>an assessment.</em></h2>
             <p>
-              The local AI uses questionnaire answers, its system instructions, and
+              The local LLM uses questionnaire answers, its system instructions, and
               medical-reference excerpts to generate possible explanations and steps to
-              consider. It does not provide a confirmed diagnosis.
+              consider.
             </p>
           </div>
           <ol class="steps">
@@ -169,7 +169,7 @@
             </li>
             <li>
               <span class="step-number">03</span>
-              <div><h3>Generate possible diagnoses</h3><p>The local model considers the answers alongside its system instructions and medical-reference excerpts, then suggests possible conditions and next steps.</p></div>
+              <div><h3>Generate an LLM assessment</h3><p>The local language model considers the answers alongside its system instructions and medical-reference excerpts, then suggests possible conditions and next steps.</p></div>
             </li>
             <li>
               <span class="step-number">04</span>
@@ -204,7 +204,7 @@
               <circle cx="10" cy="10" r="8" />
               <path d="M10 9v5m0-8h.01" />
             </svg>
-            Doctor AI is an uncertified student prototype. Possible diagnoses and suggested steps may be wrong or incomplete; they are not a substitute for onboard medical protocol or qualified medical care.
+            AI-generated possibilities may be wrong or incomplete. Use the prototype's output as information for review, not as a confirmed diagnosis.
           </p>
         </div>
       </section>
@@ -297,13 +297,13 @@
           <div class="technology-heading">
             <h2>Built with tools<br />we can <em>learn from.</em></h2>
             <p>
-              We are building and testing a modular C++ application, with optional
-              interface, language-model, and hardware experiments.
+              The working application combines a guided C++ workflow with local language-model
+              inference. Interface and sensor experiments extend the core assessment.
             </p>
           </div>
           <div class="technology-list">
             <div class="technology-row"><b>C++17 + CMake</b><span>Main application, assessment flow, and build configuration.</span><small>CORE</small></div>
-            <div class="technology-row"><b>llama.cpp + ggml</b><span>Optional local inference for questionnaire-based assessment with medical-reference context.</span><small>OPTIONAL</small></div>
+            <div class="technology-row"><b>llama.cpp + ggml</b><span>Core local language-model inference for questionnaire-based assessment with medical-reference context.</span><small>CORE</small></div>
             <div class="technology-row"><b>Qt 6 Widgets</b><span>Touchscreen interface in configured builds.</span><small>OPTIONAL</small></div>
             <div class="technology-row"><b>OpenCV</b><span>Face detection and template matching for profile selection.</span><small>EXPERIMENTAL</small></div>
             <div class="technology-row"><b>OpenSSL + JSON</b><span>Encrypted assessment payloads and structured local data.</span><small>LOCAL DATA</small></div>
