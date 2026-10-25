@@ -7,7 +7,7 @@
       name="description"
       content="Meet Doctor AI, a NASA HUNCH student project exploring local medical-assistance software for missions where communication with Earth may be limited."
     />
-    <meta name="theme-color" content="#f4f8fc" />
+    <meta name="theme-color" content="#e5edf3" />
     <title>Doctor AI | NASA HUNCH Project</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
@@ -22,7 +22,9 @@
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
         <span class="sr-only">Toggle navigation</span>
-        <span></span><span></span>
+        <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+          <path d="M4 7h16M4 17h16" />
+        </svg>
       </button>
       <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <a href="#project">The project</a>
@@ -31,27 +33,50 @@
         <a href="#technology">Technology</a>
         <a href="#team">Our team</a>
       </nav>
-      <a class="header-link" href="#project">NASA HUNCH <span aria-hidden="true">↗</span></a>
+      <a class="header-link" href="#project">
+        NASA HUNCH
+        <svg class="icon" aria-hidden="true" viewBox="0 0 16 16" focusable="false">
+          <path d="M5 11 11 5M5 5h6v6" />
+        </svg>
+      </a>
     </header>
 
     <main id="main">
       <section class="hero" id="top">
         <div class="hero-layout">
           <div class="hero-copy">
-            <p class="eyebrow"><span></span> NASA HUNCH · STUDENT ENGINEERING PROJECT</p>
+            <p class="eyebrow">
+              <span class="eyebrow-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M12 3v5m0 8v5M3 12h5m8 0h5M8.5 8.5l7 7m0-7-7 7" />
+                  <circle cx="12" cy="12" r="3.5" />
+                </svg>
+              </span>
+              NASA HUNCH <span class="eyebrow-divider" aria-hidden="true">/</span> STUDENT ENGINEERING PROJECT
+            </p>
             <h1>Medical support<br />for missions<br /><em>beyond Earth.</em></h1>
             <p class="hero-description">
               Doctor AI is our exploration of how a locally running computer could help
               astronauts organize health information when they cannot immediately reach Earth.
             </p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#project">Meet Doctor AI <span aria-hidden="true">↓</span></a>
-              <a class="text-link" href="#approach">See how it works <span aria-hidden="true">→</span></a>
+              <a class="button button-primary" href="#project">
+                Meet Doctor AI
+                <svg class="icon" aria-hidden="true" viewBox="0 0 16 16" focusable="false">
+                  <path d="M8 2v11m-4-4 4 4 4-4" />
+                </svg>
+              </a>
+              <a class="text-link" href="#approach">
+                See how it works
+                <svg class="icon" aria-hidden="true" viewBox="0 0 16 16" focusable="false">
+                  <path d="M2 8h11m-4-4 4 4-4 4" />
+                </svg>
+              </a>
             </div>
             <p class="hero-footnote">A student-built prototype exploring offline-first medical assistance.</p>
           </div>
 
-          <div class="hero-visual" aria-label="Doctor AI prototype hardware">
+          <div class="hero-visual" aria-label="A simple illustration of the Doctor AI information flow">
             <img
               src="assets/doctorai%20prototype.png"
               alt="Doctor AI student prototype with a touchscreen, keyboard, camera, and connected sensor board"
@@ -117,7 +142,13 @@
               <div><h3>Review and save</h3><p>Read the on-screen response, then save assessment details to the selected local profile.</p></div>
             </li>
           </ol>
-          <p class="ai-note"><span aria-hidden="true">!</span> Like other AI tools, generated responses can sometimes be wrong or incomplete and should be reviewed carefully.</p>
+          <p class="ai-note">
+            <svg class="icon ai-note-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
+              <circle cx="10" cy="10" r="8" />
+              <path d="M10 9v5m0-8h.01" />
+            </svg>
+            Like other AI tools, generated responses can sometimes be wrong or incomplete and should be reviewed carefully.
+          </p>
         </div>
       </section>
 
@@ -195,7 +226,12 @@
             <div class="technology-row"><b>ESP32-S3</b><span>Separate pulse-sensor firmware experiment.</span><small>EXPERIMENTAL</small></div>
           </div>
           <div class="hardware-note">
-            <span class="hardware-icon" aria-hidden="true">↗</span>
+            <span class="hardware-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" focusable="false">
+                <rect x="7" y="7" width="10" height="10" />
+                <path d="M9 2v5m6-5v5m-6 10v5m6-5v5M2 9h5m10 0h5M2 15h5m10 0h5" />
+              </svg>
+            </span>
             <p><b>Built and tested on regular computers.</b> Raspberry Pi/Linux is a target environment; current software has not been tested on spacecraft hardware.</p>
           </div>
         </div>
@@ -224,7 +260,12 @@
     <footer class="site-footer">
       <a class="wordmark" href="#top"><span class="wordmark-mark" aria-hidden="true">D</span><span>DOCTOR <b>AI</b></span></a>
       <p>A NASA HUNCH student engineering project.</p>
-      <a href="#top">Back to top ↑</a>
+      <a href="#top">
+        Back to top
+        <svg class="icon" aria-hidden="true" viewBox="0 0 16 16" focusable="false">
+          <path d="M8 14V3m-4 4 4-4 4 4" />
+        </svg>
+      </a>
     </footer>
   </body>
 </html>
