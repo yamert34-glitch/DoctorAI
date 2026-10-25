@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Meet Doctor AI, a NASA HUNCH student project exploring local medical-assistance software for missions where communication with Earth may be limited."
+      content="Meet Doctor AI, an uncertified local diagnostic-support AI prototype from NASA HUNCH. It explores possible diagnoses, next steps, and rapid escalation to onboard medical protocols."
     />
-    <meta name="theme-color" content="#e5edf3" />
+    <meta name="theme-color" content="#fcfcfd" />
     <title>Doctor AI | NASA HUNCH Project</title>
-    <link rel="stylesheet" href="styles.css?v=2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=4" />
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -56,8 +59,9 @@
             </p>
             <h1>Medical support<br />for missions<br /><em>beyond Earth.</em></h1>
             <p class="hero-description">
-              Doctor AI is our exploration of how a locally running computer could help
-              astronauts organize health information when they cannot immediately reach Earth.
+              Doctor AI is an uncertified, locally run diagnostic-support tool. It combines
+              questionnaire answers with system instructions and medical-reference excerpts
+              to suggest possible conditions and next steps for review.
             </p>
             <div class="hero-actions">
               <a class="button button-primary" href="#project">
@@ -73,10 +77,10 @@
                 </svg>
               </a>
             </div>
-            <p class="hero-footnote">A student-built prototype exploring offline-first medical assistance.</p>
+            <p class="hero-footnote">An experimental student-built diagnostic prototype—not certified medical software.</p>
           </div>
 
-          <div class="hero-visual" aria-label="A simple illustration of the Doctor AI information flow">
+          <div class="hero-visual" aria-label="Photo of the Doctor AI hardware prototype">
             <img
               src="assets/doctorai%20prototype.png"
               alt="Doctor AI student prototype with a touchscreen, keyboard, camera, and connected sensor board"
@@ -94,22 +98,51 @@
             <h2>When communication is limited,<br /><em>preparation matters.</em></h2>
             <div class="project-copy">
               <p>
-                Long-distance missions can include communication delays and times without
-                contact. Doctor AI explores a practical question: how might a crew member
-                collect and organize health information onboard while waiting to connect
-                with mission control?
+                Long-distance missions can involve communication delays or periods without
+                contact. Doctor AI explores how an onboard tool could use a crew member’s
+                questionnaire answers and medical references to suggest possible diagnoses
+                and practical next steps while they wait to connect with mission control.
               </p>
               <p>
-                Our prototype combines a guided check-in with local software and reference
-                information. It is a student engineering project, not a replacement for
-                professional medical care.
+                The locally run AI is uncertified and offers possible explanations—not a
+                confirmed diagnosis. Its assessment is informational only and never replaces
+                the onboard medical protocol or qualified medical guidance.
               </p>
             </div>
           </div>
           <div class="project-ribbon" aria-label="Project principles">
             <div><span>01</span><b>Designed for offline use</b><p>Core check-in flow runs locally.</p></div>
-            <div><span>02</span><b>Structured by design</b><p>Questions organize reported context.</p></div>
+            <div><span>02</span><b>Possible diagnosis</b><p>AI weighs answers against medical references.</p></div>
             <div><span>03</span><b>Built to keep learning</b><p>Testing and iteration guide the work.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="status section-pad" aria-labelledby="status-title">
+        <div class="section-wrap">
+          <div class="status-heading">
+            <div>
+              <div class="section-label"><span>PROJECT STATUS</span></div>
+              <h2 id="status-title">What exists today.</h2>
+            </div>
+            <p>A quick, honest snapshot of the hardware and software work so far. Some capabilities are still experimental or depend on the build.</p>
+          </div>
+          <div class="status-grid">
+            <article class="status-card">
+              <span class="status-tag status-built">BUILT</span>
+              <h3>Hardware prototype</h3>
+              <p>Touchscreen, keyboard, camera, and a connected sensor board assembled for hands-on development.</p>
+            </article>
+            <article class="status-card">
+              <span class="status-tag status-testing">IN DEVELOPMENT</span>
+              <h3>Local diagnostic support</h3>
+              <p>The C++ prototype combines questionnaire answers, system instructions, and medical-reference excerpts to suggest possible diagnoses and next steps.</p>
+            </article>
+            <article class="status-card">
+              <span class="status-tag status-exploring">EXPLORING</span>
+              <h3>Optional experiments</h3>
+              <p>Local language-model drafts, face-based profile selection, and wearable sensing remain optional or experimental.</p>
+            </article>
           </div>
         </div>
       </section>
@@ -118,10 +151,11 @@
         <div class="section-wrap">
           <div class="section-label"><span>02</span> HOW IT WORKS</div>
           <div class="approach-heading">
-            <h2>A check-in, step<br />by <em>step.</em></h2>
+            <h2>From symptoms to<br /><em>an assessment.</em></h2>
             <p>
-              The application guides the user through health information and brings it
-              together for review. Some features depend on the build and installed tools.
+              The local AI uses questionnaire answers, its system instructions, and
+              medical-reference excerpts to generate possible explanations and steps to
+              consider. It does not provide a confirmed diagnosis.
             </p>
           </div>
           <ol class="steps">
@@ -135,19 +169,42 @@
             </li>
             <li>
               <span class="step-number">03</span>
-              <div><h3>Organize information locally</h3><p>Protocol checks and local reference lookup organize the information. An optional local language model can draft additional text.</p></div>
+              <div><h3>Generate possible diagnoses</h3><p>The local model considers the answers alongside its system instructions and medical-reference excerpts, then suggests possible conditions and next steps.</p></div>
             </li>
             <li>
               <span class="step-number">04</span>
-              <div><h3>Review and save</h3><p>Read the on-screen response, then save assessment details to the selected local profile.</p></div>
+              <div><h3>Review and follow protocol</h3><p>Review the AI-generated assessment as a possibility, not a certainty. Follow onboard medical protocol for care decisions.</p></div>
             </li>
           </ol>
+          <aside class="urgent-path" aria-labelledby="urgent-path-title">
+            <div class="urgent-path-label">FAST ESCALATION · PROTOTYPE FEATURE</div>
+            <h3 id="urgent-path-title">Serious phrases can bypass model wait time.</h3>
+            <p>
+              Before a model assessment, a local phrase checker scans answers for configured
+              high-risk terms and symptom phrases—for example, reports involving blood or
+              severe chest and heart symptoms. When it finds a match, the prototype skips
+              model generation and immediately displays a fixed urgent warning: the
+              reported symptoms may indicate a very serious situation, and the user should
+              follow the onboard medical protocol.
+            </p>
+            <p>
+              In current team testing, a model-generated assessment can take about 1 minute
+              40 seconds. For a matched phrase, the direct-message path is designed to
+              respond in under 1–2 seconds instead of waiting for generation.
+            </p>
+            <p class="urgent-path-caveat">
+              This phrase checker is an early safeguard, not a complete emergency detector:
+              it may miss urgent wording or match a phrase without understanding context.
+              No alert does not mean a situation is safe. Follow onboard protocol whenever
+              symptoms are concerning.
+            </p>
+          </aside>
           <p class="ai-note">
             <svg class="icon ai-note-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
               <circle cx="10" cy="10" r="8" />
               <path d="M10 9v5m0-8h.01" />
             </svg>
-            Like other AI tools, generated responses can sometimes be wrong or incomplete and should be reviewed carefully.
+            Doctor AI is an uncertified student prototype. Possible diagnoses and suggested steps may be wrong or incomplete; they are not a substitute for onboard medical protocol or qualified medical care.
           </p>
         </div>
       </section>
@@ -158,50 +215,77 @@
           <div class="process-heading">
             <h2>Sketches, builds<br />and <em>next steps.</em></h2>
             <p>
-              The project has moved from early concepts to hands-on testing. These images
-              show some of the ideas and prototype work behind the project.
+              These are real project artifacts—from the first interface sketches to
+              hardware on the bench. Concepts show directions explored, not features
+              that are already built.
             </p>
           </div>
           <div class="project-gallery">
             <figure class="gallery-feature">
-              <img
-                src="assets/doctorai%20prototype.png"
-                alt="Touchscreen, keyboard, camera, and sensor board assembled for the Doctor AI prototype"
-                loading="lazy"
-              />
+              <div class="gallery-image">
+                <img
+                  src="assets/doctorai%20prototype.png"
+                  alt="Doctor AI prototype assembled from a touchscreen, keyboard, camera, and sensor board"
+                  loading="lazy"
+                />
+                <span class="gallery-kind">BUILT HARDWARE</span>
+              </div>
               <figcaption><b>Doctor AI hardware prototype</b><span>Touchscreen · camera · sensor board</span></figcaption>
             </figure>
             <figure>
-              <img
-                src="assets/brainstorming1.png"
-                alt="Hand-drawn early concept for a small voice- and touch-operated medical assistant"
-                loading="lazy"
-              />
-              <figcaption><b>Early interface concept</b><span>Initial brainstorming sketch</span></figcaption>
+              <div class="gallery-image">
+                <img
+                  src="assets/brainstorming1.png"
+                  alt="Hand-drawn mini desk buddy concept with a screen, voice and touch input, and health-data notes"
+                  loading="lazy"
+                />
+                <span class="gallery-kind">INTERFACE SKETCH</span>
+              </div>
+              <figcaption><b>Mini desk-buddy concept</b><span>Early voice-and-touch interface idea</span></figcaption>
             </figure>
             <figure>
-              <img
-                src="assets/screencasecad.png"
-                alt="CAD render of a proposed turquoise case for a small touchscreen device"
-                loading="lazy"
-              />
-              <figcaption><b>Enclosure exploration</b><span>CAD concept for a screen case</span></figcaption>
+              <div class="gallery-image">
+                <img
+                  src="assets/brainstorming2.png"
+                  alt="Hand-drawn wearable physiological monitor concept with an AI system and health readings"
+                  loading="lazy"
+                />
+                <span class="gallery-kind">WEARABLE CONCEPT</span>
+              </div>
+              <figcaption><b>Physiological monitor</b><span>Wearable health-data concept</span></figcaption>
             </figure>
             <figure>
-              <img
-                src="assets/brainstorming2.png"
-                alt="Hand-drawn wearable health monitoring watch concept"
-                loading="lazy"
-              />
-              <figcaption><b>Wearable concept</b><span>Health-monitoring idea sketch</span></figcaption>
+              <div class="gallery-image">
+                <img
+                  src="assets/brainstorming3.png"
+                  alt="Hand-drawn watch concept annotated with health sensors and readings"
+                  loading="lazy"
+                />
+                <span class="gallery-kind">WATCH STUDY</span>
+              </div>
+              <figcaption><b>Health-monitoring watch</b><span>Sensor and display exploration</span></figcaption>
             </figure>
             <figure>
-              <img
-                src="assets/pillcounter%20prototype.png"
-                alt="CAD models of parts for a pill-counting prototype"
-                loading="lazy"
-              />
-              <figcaption><b>Related pill-counter prototype</b><span>Separate hardware exploration</span></figcaption>
+              <div class="gallery-image">
+                <img
+                  src="assets/screencasecad.png"
+                  alt="CAD render of a proposed turquoise enclosure for a touchscreen device"
+                  loading="lazy"
+                />
+                <span class="gallery-kind">ENCLOSURE CAD</span>
+              </div>
+              <figcaption><b>Screen enclosure</b><span>CAD concept for the device case</span></figcaption>
+            </figure>
+            <figure>
+              <div class="gallery-image">
+                <img
+                  src="assets/pillcounter%20prototype.png"
+                  alt="CAD render of two parts for a separate pill-counter prototype"
+                  loading="lazy"
+                />
+                <span class="gallery-kind">RELATED PROTOTYPE</span>
+              </div>
+              <figcaption><b>Pill-counter prototype</b><span>Separate hardware exploration</span></figcaption>
             </figure>
           </div>
         </div>
@@ -219,7 +303,7 @@
           </div>
           <div class="technology-list">
             <div class="technology-row"><b>C++17 + CMake</b><span>Main application, assessment flow, and build configuration.</span><small>CORE</small></div>
-            <div class="technology-row"><b>llama.cpp + ggml</b><span>Optional local inference with compatible GGUF models.</span><small>OPTIONAL</small></div>
+            <div class="technology-row"><b>llama.cpp + ggml</b><span>Optional local inference for questionnaire-based assessment with medical-reference context.</span><small>OPTIONAL</small></div>
             <div class="technology-row"><b>Qt 6 Widgets</b><span>Touchscreen interface in configured builds.</span><small>OPTIONAL</small></div>
             <div class="technology-row"><b>OpenCV</b><span>Face detection and template matching for profile selection.</span><small>EXPERIMENTAL</small></div>
             <div class="technology-row"><b>OpenSSL + JSON</b><span>Encrypted assessment payloads and structured local data.</span><small>LOCAL DATA</small></div>
