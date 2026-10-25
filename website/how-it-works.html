@@ -43,6 +43,15 @@
             <li><span class="step-number">03</span><div><h3>Generate an LLM assessment</h3><p>The local language model considers the answers alongside its system instructions and medical-reference excerpts, then suggests possible conditions and next steps.</p></div></li>
             <li><span class="step-number">04</span><div><h3>Review and follow protocol</h3><p>Review the AI-generated assessment as a possibility, not a certainty. Follow onboard medical protocol for care decisions.</p></div></li>
           </ol>
+          <div class="intake-detail">
+            <div class="section-label"><span>WHAT THE CHECK-IN COVERS</span></div>
+            <h3>Enough context to make the answers useful.</h3>
+            <div class="intake-columns">
+              <div><b>Current concern</b><p>What the user is feeling, when it began, whether it is constant or comes and goes, and what makes it better or worse.</p></div>
+              <div><b>Related symptoms</b><p>Other symptoms happening at the same time, so the assessment has more than one isolated description.</p></div>
+              <div><b>Personal context</b><p>Age, current medications, relevant medical history, and—when the sensor is available—a heart-rate reading.</p></div>
+            </div>
+          </div>
           <aside class="urgent-path" aria-labelledby="urgent-path-title">
             <div class="urgent-path-label">FAST ESCALATION · PROTOTYPE FEATURE</div>
             <h3 id="urgent-path-title">Serious phrases can bypass model wait time.</h3>
@@ -50,6 +59,13 @@
             <p>In current team testing, a model-generated assessment can take about 1 minute 40 seconds. For a matched phrase, the direct-message path is designed to respond in under 1–2 seconds instead of waiting for generation.</p>
             <p class="urgent-path-caveat">This phrase checker is an early safeguard, not a complete emergency detector: it may miss urgent wording or match a phrase without understanding context. No alert does not mean a situation is safe. Follow onboard protocol whenever symptoms are concerning.</p>
           </aside>
+          <div class="assessment-detail">
+            <div>
+              <div class="section-label"><span>THE MODEL'S ROLE</span></div>
+              <h3>Context in. Possible explanations out.</h3>
+            </div>
+            <p>The model is one part of the flow, not a replacement for the crew member. The application combines the submitted answers, its system instructions, and relevant local reference excerpts, then asks the model to produce a readable assessment with possible conditions and next steps. The generated text can be incomplete or mistaken, so it remains something to review—not a confirmed diagnosis.</p>
+          </div>
           <p class="ai-note">
             <svg class="icon ai-note-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><circle cx="10" cy="10" r="8" /><path d="M10 9v5m0-8h.01" /></svg>
             AI-generated possibilities may be wrong or incomplete. Use the prototype's output as information for review, not as a confirmed diagnosis.

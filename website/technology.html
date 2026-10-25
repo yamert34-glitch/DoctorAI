@@ -33,6 +33,15 @@
       <section class="technology section-pad" id="technology">
         <div class="section-wrap">
           <div class="section-label"><span>SOFTWARE & HARDWARE</span></div>
+          <div class="technology-heading">
+            <h2>Local tools,<br /><em>connected in one flow.</em></h2>
+            <p>The interface, questionnaire, local reference material, and language model work together in the C++ application. Hardware experiments add input and output options around that core.</p>
+          </div>
+          <div class="build-flow" aria-label="Assessment software flow">
+            <div><span>01</span><b>Collect</b><p>The Qt interface guides a user through symptoms and relevant context.</p></div>
+            <div><span>02</span><b>Prepare</b><p>C++ assessment logic checks the intake and selects relevant local reference excerpts.</p></div>
+            <div><span>03</span><b>Generate</b><p>llama.cpp runs the language model locally to produce a possible assessment and next steps.</p></div>
+          </div>
           <div class="technology-list">
             <div class="technology-row"><b>C++17 + CMake</b><span>Main application, assessment flow, and build configuration.</span><small>CORE</small></div>
             <div class="technology-row"><b>llama.cpp + ggml</b><span>Core local language-model inference for questionnaire-based assessment with medical-reference context.</span><small>CORE</small></div>
@@ -41,9 +50,20 @@
             <div class="technology-row"><b>OpenSSL + JSON</b><span>Encrypted assessment payloads and structured local data.</span><small>LOCAL DATA</small></div>
             <div class="technology-row"><b>ESP32-S3</b><span>Separate pulse-sensor firmware experiment.</span><small>EXPERIMENTAL</small></div>
           </div>
+          <div class="hardware-inventory">
+            <div class="section-label"><span>THE PHYSICAL PROTOTYPE</span></div>
+            <h3>A build made for hands-on iteration.</h3>
+            <p class="hardware-intro">The project has been assembled and tested on regular computers with a touchscreen setup. The board and sketches also record separate electronics and enclosure experiments.</p>
+            <div class="hardware-items">
+              <div><b>Touchscreen + keyboard</b><span>Read questions, enter answers, and review the generated assessment.</span></div>
+              <div><b>Camera</b><span>Used for experimental profile matching—not for medical image analysis.</span></div>
+              <div><b>ESP32-S3 sensor experiment</b><span>Reads a pulse sensor over serial when configured; a missing or unreliable reading is recorded as unknown.</span></div>
+              <div><b>Case and board studies</b><span>CAD and brainstorm images capture design directions, not proof of flight-ready hardware.</span></div>
+            </div>
+          </div>
           <div class="hardware-note">
             <span class="hardware-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" focusable="false"><rect x="7" y="7" width="10" height="10" /><path d="M9 2v5m6-5v5m-6 10v5m6-5v5M2 9h5m10 0h5M2 15h5m10 0h5" /></svg></span>
-            <p><b>Built and tested on regular computers.</b> Raspberry Pi/Linux is a target environment; current software has not been tested on spacecraft hardware.</p>
+            <p><b>Built and tested on regular computers.</b> Raspberry Pi/Linux is a target environment; current software has not been tested on spacecraft hardware. Radiation tolerance, multi-week autonomy, and spacecraft compatibility remain engineering challenges—not established capabilities.</p>
           </div>
         </div>
       </section>
