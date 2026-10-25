@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Explore Doctor AI, a NASA HUNCH student engineering prototype investigating local AI and structured health information for communication-constrained environments."
+      content="Meet Doctor AI, a NASA HUNCH student project exploring local medical-assistance software for missions where communication with Earth may be limited."
     />
-    <meta name="theme-color" content="#101a20" />
-    <title>Doctor AI — Medical support, engineered for the unknown</title>
+    <meta name="theme-color" content="#f4f8fc" />
+    <title>Doctor AI | NASA HUNCH Project</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
@@ -16,428 +16,166 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
-      <a class="wordmark" href="#top" aria-label="Doctor AI home">DOCTOR <span>AI</span></a>
+      <a class="wordmark" href="#top" aria-label="Doctor AI home">
+        <span class="wordmark-mark" aria-hidden="true">D</span>
+        <span>DOCTOR <b>AI</b></span>
+      </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span class="sr-only">Toggle navigation</span><span></span><span></span>
+        <span class="sr-only">Toggle navigation</span>
+        <span></span><span></span>
       </button>
       <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-        <a href="#mission">Mission</a>
-        <a href="#system">System</a>
-        <a href="#workflow">Workflow</a>
-        <a href="#engineering">Engineering</a>
-        <a href="#team">Project</a>
+        <a href="#project">The project</a>
+        <a href="#approach">How it works</a>
+        <a href="#technology">Technology</a>
+        <a href="#team">Our team</a>
       </nav>
-      <a class="header-cta" href="#system">Explore the system <span aria-hidden="true">↗</span></a>
+      <a class="header-link" href="#project">NASA HUNCH <span aria-hidden="true">↗</span></a>
     </header>
 
     <main id="main">
       <section class="hero" id="top">
-        <div class="hero-backdrop" aria-hidden="true">
-          <div class="hero-grid"></div>
-        </div>
         <div class="hero-layout">
           <div class="hero-copy">
-            <p class="eyebrow"><span class="status-dot"></span> NASA HUNCH · 2026–2027 · STUDENT ENGINEERING PROJECT</p>
-            <h1>Medical support,<br />engineered for<br /><span>the unknown.</span></h1>
+            <p class="eyebrow"><span></span> NASA HUNCH · STUDENT ENGINEERING PROJECT</p>
+            <h1>Medical support<br />for missions<br /><em>beyond Earth.</em></h1>
             <p class="hero-description">
-              Doctor AI explores how local artificial intelligence can help astronauts
-              organize health information when communication with Earth is unavailable.
+              Doctor AI is our exploration of how a locally running computer could help
+              astronauts organize health information when they cannot immediately reach Earth.
             </p>
             <div class="hero-actions">
-              <a class="button button-bright" href="#system">Explore the system <span aria-hidden="true">↓</span></a>
-              <a class="button button-quiet" href="#workflow">How it works <span aria-hidden="true">↘</span></a>
+              <a class="button button-primary" href="#project">Meet Doctor AI <span aria-hidden="true">↓</span></a>
+              <a class="text-link" href="#approach">See how it works <span aria-hidden="true">→</span></a>
             </div>
-            <div class="hero-status" aria-label="System design themes">
-              <span>LOCAL INFERENCE</span><i></i><span>OFFLINE-FIRST</span><i></i><span>STRUCTURED INTAKE</span>
-            </div>
+            <p class="hero-footnote">A student-built prototype exploring offline-first medical assistance.</p>
           </div>
 
-          <div class="hero-product" aria-label="Illustrated concept of the Doctor AI application interface">
-            <div class="product-annotation annotation-top"><span>INTERFACE STUDY</span><i></i></div>
-            <div class="tablet">
-              <div class="tablet-camera"></div>
-              <div class="tablet-screen">
-                <div class="tablet-toolbar">
-                  <span class="toolbar-title">DOCTOR AI <small>HEALTH CHECK-IN</small></span>
-                  <span class="local-badge"><i></i> ON DEVICE</span>
-                </div>
-                <div class="tablet-main">
-                  <div class="tablet-meta"><span>SYMPTOM INTAKE</span><span>01 <b>/</b> 08</span></div>
-                  <h2>What are you<br />feeling right now?</h2>
-                  <div class="tablet-input">Tell us what you’re experiencing.<span class="input-cursor"></span></div>
-                  <div class="tablet-controls"><span class="tablet-mic">◖</span><span>TYPE OR SPEAK</span><b>CONTINUE <i>→</i></b></div>
-                  <div class="tablet-progress"><span></span></div>
-                </div>
-                <div class="tablet-footer"><span>PROFILE: LOCAL</span><span>ASSESSMENT FLOW</span></div>
-              </div>
+          <div class="hero-visual" aria-label="A simple illustration of the Doctor AI information flow">
+            <div class="visual-heading"><span>DOCTOR AI</span><span>PROJECT OVERVIEW</span></div>
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="visual-center">
+              <span class="center-cross" aria-hidden="true">+</span>
+              <strong>LOCAL<br />SUPPORT</strong>
+              <small>NO CLOUD MODEL REQUIRED</small>
             </div>
+            <div class="visual-point point-input"><span class="point-icon">01</span><b>Health<br />information</b></div>
+            <div class="visual-point point-process"><span class="point-icon">02</span><b>Local<br />processing</b></div>
+            <div class="visual-point point-review"><span class="point-icon">03</span><b>Response<br />to review</b></div>
+            <div class="visual-caption"><i></i> INFORMATION STAYS ON THE DEVICE DURING A CHECK-IN</div>
           </div>
         </div>
+        <div class="hero-bottom"><span>BUILT BY STUDENTS</span><span>GLADYS PORTER EARLY COLLEGE HIGH SCHOOL</span><span>2026–2027</span></div>
       </section>
 
-      <section class="mission section-pad" id="mission">
+      <section class="project section-pad" id="project">
         <div class="section-wrap">
-          <div class="section-kicker"><span>01</span><i></i> THE DESIGN CHALLENGE</div>
-          <div class="mission-heading">
-            <h2>When Earth is<br />out of reach.</h2>
-            <div class="mission-intro">
+          <div class="section-label"><span>01</span> THE PROJECT</div>
+          <div class="project-intro">
+            <h2>When communication is limited,<br /><em>preparation matters.</em></h2>
+            <div class="project-copy">
               <p>
-                On Moon and Mars missions, communication delays or periods without
-                contact may make immediate medical guidance difficult to access.
+                Long-distance missions can include communication delays and times without
+                contact. Doctor AI explores a practical question: how might a crew member
+                collect and organize health information onboard while waiting to connect
+                with mission control?
               </p>
-              <p class="quiet-copy">
-                The project explores how health information could be gathered and
-                organized onboard, between conversations with mission control.
+              <p>
+                Our prototype combines a guided check-in with local software and reference
+                information. It is a student engineering project, not a replacement for
+                professional medical care.
               </p>
             </div>
           </div>
-          <div class="challenge-grid">
-            <article class="challenge">
-              <span class="challenge-number">01</span>
-              <div class="challenge-graphic delay-graphic" aria-hidden="true"><i></i><i></i><i></i><span>EARTH</span><b>CREW</b></div>
-              <h3>Communication delays</h3>
-              <p>Support from Earth may not be available in real time. Information gathered onboard needs to remain useful between contacts.</p>
-            </article>
-            <article class="challenge">
-              <span class="challenge-number">02</span>
-              <div class="challenge-graphic resource-graphic" aria-hidden="true"><span>COMPUTE</span><i></i><b>LOCAL</b><small>POWER · MEMORY · STORAGE</small></div>
-              <h3>Limited onboard resources</h3>
-              <p>Spacecraft hardware places constraints on compute, power, storage, and the software that can run within them.</p>
-            </article>
-            <article class="challenge">
-              <span class="challenge-number">03</span>
-              <div class="challenge-graphic uncertainty-graphic" aria-hidden="true"><span>INPUT</span><i>?</i><b>REVIEW</b></div>
-              <h3>High-stakes uncertainty</h3>
-              <p>Health information is complex, and the tools that organize it need clear limits and careful review.</p>
-            </article>
+          <div class="project-ribbon" aria-label="Project principles">
+            <div><span>01</span><b>Designed for offline use</b><p>Core check-in flow runs locally.</p></div>
+            <div><span>02</span><b>Structured by design</b><p>Questions organize reported context.</p></div>
+            <div><span>03</span><b>Built to keep learning</b><p>Testing and iteration guide the work.</p></div>
           </div>
         </div>
       </section>
 
-      <section class="overview section-pad" id="overview">
+      <section class="approach section-pad" id="approach">
         <div class="section-wrap">
-          <div class="section-kicker"><span>02</span><i></i> THE APPROACH</div>
-          <div class="overview-grid">
-            <div>
-              <h2>A local-first<br />approach to<br /><span>medical assistance.</span></h2>
-            </div>
-            <div class="overview-copy">
-              <p class="lead-copy">
-                Doctor AI is a C++ application that gathers structured symptom
-                information, organizes health context, and can optionally use a
-                locally running language model to draft a preliminary response.
-              </p>
-              <p class="quiet-copy">
-                Its configured assessment path can use local computation and local
-                reference data without requiring cloud-based model inference.
-              </p>
-              <a class="inline-link" href="#system">Explore the architecture <span>↗</span></a>
-            </div>
+          <div class="section-label"><span>02</span> HOW IT WORKS</div>
+          <div class="approach-heading">
+            <h2>A check-in, step<br />by <em>step.</em></h2>
+            <p>
+              The application guides the user through health information and brings it
+              together for review. Some features depend on the build and installed tools.
+            </p>
           </div>
-          <div class="architecture-strip" aria-label="Doctor AI system flow">
-            <div class="arch-node"><span class="arch-icon">01</span><b>INTERACT</b><small>Touch · keyboard · configured voice</small></div>
-            <span class="arch-connector" aria-hidden="true"></span>
-            <div class="arch-node"><span class="arch-icon">02</span><b>ORGANIZE</b><small>Profile · structured health intake</small></div>
-            <span class="arch-connector" aria-hidden="true"></span>
-            <div class="arch-node"><span class="arch-icon">03</span><b>PROCESS LOCALLY</b><small>Protocol logic · optional local model</small></div>
-            <span class="arch-connector" aria-hidden="true"></span>
-            <div class="arch-node"><span class="arch-icon">04</span><b>REVIEW</b><small>On-screen · configured audio output</small></div>
-          </div>
-          <div class="implementation-legend">
-            <span><i class="legend-live"></i> PRESENT IN PROJECT</span>
-            <span><i class="legend-experimental"></i> EXPERIMENTAL / CONFIGURATION-DEPENDENT</span>
-            <span><i class="legend-future"></i> FUTURE RESEARCH</span>
-          </div>
+          <ol class="steps">
+            <li>
+              <span class="step-number">01</span>
+              <div><h3>Choose a profile</h3><p>Start a local profile or select an existing one. Face matching is an experimental profile-selection option.</p></div>
+            </li>
+            <li>
+              <span class="step-number">02</span>
+              <div><h3>Answer guided questions</h3><p>Share symptoms, when they began, relevant history, medications, and other requested details.</p></div>
+            </li>
+            <li>
+              <span class="step-number">03</span>
+              <div><h3>Organize information locally</h3><p>Protocol checks and local reference lookup organize the information. An optional local language model can draft additional text.</p></div>
+            </li>
+            <li>
+              <span class="step-number">04</span>
+              <div><h3>Review and save</h3><p>Read the on-screen response, then save assessment details to the selected local profile.</p></div>
+            </li>
+          </ol>
+          <p class="ai-note"><span aria-hidden="true">!</span> Like other AI tools, generated responses can sometimes be wrong or incomplete and should be reviewed carefully.</p>
         </div>
       </section>
 
-      <section class="system section-pad" id="system">
+      <section class="technology section-pad" id="technology">
         <div class="section-wrap">
-          <div class="section-kicker"><span>03</span><i></i> INTERACTIVE SYSTEM EXPLORER</div>
-          <div class="section-heading">
-            <h2>Explore the<br /><span>system layers.</span></h2>
-            <p>Select a component to see its role in the current prototype.</p>
+          <div class="section-label"><span>03</span> ENGINEERING & TECHNOLOGY</div>
+          <div class="technology-heading">
+            <h2>Built with tools<br />we can <em>learn from.</em></h2>
+            <p>
+              We are building and testing a modular C++ application, with optional
+              interface, language-model, and hardware experiments.
+            </p>
           </div>
-          <div class="explorer-layout">
-            <div class="system-map" role="group" aria-label="Select a Doctor AI system component">
-              <div class="map-grid" aria-hidden="true"></div>
-              <div class="map-label map-label-top">LOCAL APPLICATION BOUNDARY</div>
-              <button class="system-node node-core is-selected" type="button" data-component="core" aria-pressed="true">
-                <span class="node-glyph">C++</span><span>Application core<small>C++17 · CMake</small></span><b>01</b>
-              </button>
-              <button class="system-node node-ai" type="button" data-component="ai" aria-pressed="false">
-                <span class="node-glyph">◉</span><span>Local AI runtime<small>llama.cpp · ggml</small></span><b>02</b>
-              </button>
-              <button class="system-node node-cache" type="button" data-component="cache" aria-pressed="false">
-                <span class="node-glyph">≋</span><span>Reference cache<small>JSONL · keyword search</small></span><b>03</b>
-              </button>
-              <button class="system-node node-profile" type="button" data-component="profiles" aria-pressed="false">
-                <span class="node-glyph">⌂</span><span>User profiles<small>Local · AES-GCM payload</small></span><b>04</b>
-              </button>
-              <button class="system-node node-voice" type="button" data-component="voice" aria-pressed="false">
-                <span class="node-glyph">)))</span><span>Voice interface<small>Configured local tools</small></span><b>05</b>
-              </button>
-              <button class="system-node node-pulse" type="button" data-component="pulse" aria-pressed="false">
-                <span class="node-glyph">⌁</span><span>Pulse sensor<small>Separate ESP32-S3 experiment</small></span><b>06</b>
-              </button>
-              <svg class="map-connections" viewBox="0 0 640 400" preserveAspectRatio="none" aria-hidden="true">
-                <path d="M320 160V72M320 160L125 105M320 160L515 105M320 210L125 282M320 210L515 282M320 210V340" />
-                <circle cx="320" cy="160" r="4" /><circle cx="320" cy="210" r="4" />
-              </svg>
-              <div class="map-core"><span>DOCTOR AI</span><small>ASSESSMENT FLOW</small></div>
-              <div class="map-label map-label-bottom"><i></i> SERIAL SENSOR PATH IS SEPARATE</div>
-            </div>
-            <aside class="component-detail" aria-live="polite" aria-atomic="true">
-              <div class="detail-topline"><span id="component-index">COMPONENT / 01</span><span id="component-status" class="detail-status status-implemented">IMPLEMENTED</span></div>
-              <p class="detail-category" id="component-category">APPLICATION</p>
-              <h3 id="component-title">Application core</h3>
-              <p class="detail-description" id="component-description">The C++17 application coordinates the assessment flow, command-line options, profile lifecycle, structured intake, protocol checks, and output.</p>
-              <div class="detail-specs" id="component-specs">
-                <div><span>LANGUAGE</span><b>C++17</b></div>
-                <div><span>BUILD</span><b>CMake</b></div>
-                <div><span>ENTRY</span><b>NasaHunch-src/main.cpp</b></div>
-              </div>
-              <div class="detail-note"><span>i</span><p id="component-note">The main entry point includes the organized application source files in one translation unit.</p></div>
-            </aside>
+          <div class="technology-list">
+            <div class="technology-row"><b>C++17 + CMake</b><span>Main application, assessment flow, and build configuration.</span><small>CORE</small></div>
+            <div class="technology-row"><b>llama.cpp + ggml</b><span>Optional local inference with compatible GGUF models.</span><small>OPTIONAL</small></div>
+            <div class="technology-row"><b>Qt 6 Widgets</b><span>Touchscreen interface in configured builds.</span><small>OPTIONAL</small></div>
+            <div class="technology-row"><b>OpenCV</b><span>Face detection and template matching for profile selection.</span><small>EXPERIMENTAL</small></div>
+            <div class="technology-row"><b>OpenSSL + JSON</b><span>Encrypted assessment payloads and structured local data.</span><small>LOCAL DATA</small></div>
+            <div class="technology-row"><b>ESP32-S3</b><span>Separate pulse-sensor firmware experiment.</span><small>EXPERIMENTAL</small></div>
+          </div>
+          <div class="hardware-note">
+            <span class="hardware-icon" aria-hidden="true">↗</span>
+            <p><b>Built and tested on regular computers.</b> Raspberry Pi/Linux is a target environment; current software has not been tested on spacecraft hardware.</p>
           </div>
         </div>
       </section>
 
-      <section class="workflow-section section-pad" id="workflow">
-        <div class="section-wrap">
-          <div class="section-kicker"><span>04</span><i></i> HOW IT WORKS</div>
-          <div class="section-heading">
-            <h2>A check-in, from<br /><span>start to review.</span></h2>
-            <p>A guided sequence keeps the interaction consistent and gives users a chance to review what they share.</p>
-          </div>
-          <div class="workflow-timeline">
-            <article class="timeline-step">
-              <span class="timeline-number">01</span><span class="timeline-line"></span>
-              <p class="timeline-tag">PROFILE</p><h3>Identify the user</h3>
-              <p>A returning user can try face-template matching against a local profile. A new user can create one.</p>
-            </article>
-            <article class="timeline-step">
-              <span class="timeline-number">02</span><span class="timeline-line"></span>
-              <p class="timeline-tag">INTAKE</p><h3>Collect health information</h3>
-              <p>Structured questions cover symptoms, onset, patterns, other symptoms, heart rate, age, medications, and history.</p>
-            </article>
-            <article class="timeline-step">
-              <span class="timeline-number">03</span><span class="timeline-line"></span>
-              <p class="timeline-tag">PROCESSING</p><h3>Organize the assessment</h3>
-              <p>Phrase-based checks and local retrieval organize context. Experimental AI can be enabled to generate additional text.</p>
-            </article>
-            <article class="timeline-step">
-              <span class="timeline-number">04</span><span class="timeline-line"></span>
-              <p class="timeline-tag">REVIEW</p><h3>Review the response</h3>
-              <p>The response can appear on screen and, in configured environments, be read aloud.</p>
-            </article>
-            <article class="timeline-step">
-              <span class="timeline-number">05</span><span class="timeline-line"></span>
-              <p class="timeline-tag">LOCAL HISTORY</p><h3>Retain local information</h3>
-              <p>Assessment details can be saved to the selected local profile after the application's identity check.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="interface-section section-pad" id="interface">
-        <div class="section-wrap">
-          <div class="section-kicker"><span>05</span><i></i> INTERFACE STUDY</div>
-          <div class="interface-heading">
-            <div><h2>A closer look at<br /><span>the check-in.</span></h2></div>
-            <p>Explore a visual mockup of the profile, intake, history, and response screens.</p>
-          </div>
-          <div class="interface-showcase">
-            <div class="preview-tabs" role="tablist" aria-label="Interface mockup screens">
-              <button class="preview-tab is-active" id="preview-tab-profile" type="button" role="tab" aria-selected="true" aria-controls="preview-screen" data-screen="profile">01 <span>Profile</span></button>
-              <button class="preview-tab" id="preview-tab-intake" type="button" role="tab" aria-selected="false" aria-controls="preview-screen" data-screen="intake" tabindex="-1">02 <span>Intake</span></button>
-              <button class="preview-tab" id="preview-tab-history" type="button" role="tab" aria-selected="false" aria-controls="preview-screen" data-screen="history" tabindex="-1">03 <span>History</span></button>
-              <button class="preview-tab" id="preview-tab-result" type="button" role="tab" aria-selected="false" aria-controls="preview-screen" data-screen="result" tabindex="-1">04 <span>Response</span></button>
-            </div>
-            <div class="preview-stage">
-              <div class="preview-readout"><span class="live-indicator"></span><span id="preview-state">PROFILE SELECT</span><span>VISUAL DEMONSTRATION</span></div>
-              <div class="mock-device">
-                <div class="mock-screen" id="preview-screen" role="tabpanel" aria-labelledby="preview-tab-profile" tabindex="0">
-                  <div class="mock-appbar"><strong>DOCTOR AI</strong><span><i></i> LOCAL MODE</span></div>
-                  <div class="mock-screen-content" id="preview-content">
-                    <p class="mock-eyebrow">WELCOME · LOCAL PROFILE</p>
-                    <h3>Ready when<br />you are.</h3>
-                    <p class="mock-copy">Select an existing profile or create a new one to begin a check-in.</p>
-                    <div class="mock-button">START CHECK-IN <span>→</span></div>
-                    <div class="mock-small">INTERFACE MOCKUP</div>
-                  </div>
-                </div>
-              </div>
-              <div class="preview-caption"><span id="preview-title">A familiar starting point</span><span id="preview-description">Local profile selection begins the application flow.</span></div>
-              <span class="preview-corner corner-one">UI / 04</span><span class="preview-corner corner-two">MOCK DATA ONLY</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="engineering section-pad" id="engineering">
-        <div class="section-wrap">
-          <div class="section-kicker"><span>06</span><i></i> ENGINEERING & TECHNOLOGY</div>
-          <div class="section-heading">
-            <h2>Built from the<br /><span>system level up.</span></h2>
-            <p>A layered software stack brings together application logic, local inference, a touchscreen interface, local data, and optional hardware experiments.</p>
-          </div>
-          <div class="engineering-layout">
-            <div class="stack-table" role="table" aria-label="Doctor AI technology stack">
-              <div class="stack-row stack-head" role="row"><span role="columnheader">TECHNOLOGY</span><span role="columnheader">ROLE IN THE PROJECT</span><span role="columnheader">STATUS</span></div>
-              <div class="stack-row" role="row"><b role="cell">C++17</b><span role="cell">Main application and assessment flow</span><small role="cell">CORE</small></div>
-              <div class="stack-row" role="row"><b role="cell">CMake</b><span role="cell">Build configuration and target setup</span><small role="cell">CORE</small></div>
-              <div class="stack-row" role="row"><b role="cell">llama.cpp / ggml</b><span role="cell">Local GGUF language-model inference</span><small class="status-blue" role="cell">OPTIONAL AI</small></div>
-              <div class="stack-row" role="row"><b role="cell">Qt 6 Widgets</b><span role="cell">Touchscreen interface in configured builds</span><small class="status-blue" role="cell">OPTIONAL UI</small></div>
-              <div class="stack-row" role="row"><b role="cell">OpenCV</b><span role="cell">YuNet face detection and SFace template matching</span><small role="cell">CAMERA</small></div>
-              <div class="stack-row" role="row"><b role="cell">OpenSSL Crypto</b><span role="cell">AES-256-GCM for assessment profile payloads</span><small role="cell">DATA</small></div>
-              <div class="stack-row" role="row"><b role="cell">nlohmann/json</b><span role="cell">Structured JSON input and reference data</span><small role="cell">DATA</small></div>
-              <div class="stack-row" role="row"><b role="cell">Local speech tools</b><span role="cell">Configured speech recognition and audio output</span><small class="status-blue" role="cell">CONFIGURABLE</small></div>
-              <div class="stack-row" role="row"><b role="cell">ESP32-S3</b><span role="cell">Separate experimental pulse-sensor firmware</span><small class="status-amber" role="cell">EXPERIMENT</small></div>
-            </div>
-            <aside class="hardware-panel">
-              <p class="mono-label">HARDWARE CONTEXT</p>
-              <div class="hardware-illustration" aria-hidden="true">
-                <div class="pi-board"><span class="board-chip"></span><i></i><i></i><b>COMPUTE MODULE</b></div>
-                <div class="hardware-orbit"></div><span class="hardware-pin pin-one"></span><span class="hardware-pin pin-two"></span>
-              </div>
-              <h3>Built for a small computer.<br />Exploring a bigger question.</h3>
-              <p>Raspberry Pi/Linux is a target environment. macOS is also used for development and testing. Current software has not been validated on radiation-hardened spacecraft hardware.</p>
-              <div class="hardware-facts"><span>HOST <b>Raspberry Pi / Linux</b></span><span>DEVELOPMENT <b>macOS + Linux</b></span><span>FLIGHT HARDWARE <b>Future evaluation</b></span></div>
-            </aside>
-          </div>
-        </div>
-      </section>
-
-      <section class="offline section-pad" id="offline">
-        <div class="offline-grid" aria-hidden="true"></div>
-        <div class="section-wrap offline-wrap">
-          <div class="section-kicker"><span>07</span><i></i> OFFLINE-FIRST ENGINEERING</div>
-          <div class="offline-heading">
-            <h2>Designed around<br />the absence of<br /><span>a connection.</span></h2>
-            <p>Local processing reduces dependence on network access during the configured assessment path. It also puts model performance and device limits at the center of the engineering problem.</p>
-          </div>
-          <div class="offline-columns">
-            <div class="offline-column">
-              <p class="offline-column-label"><i class="signal-local"></i> LOCAL PROCESSING</p>
-              <div><span>01</span><p>Local GGUF inference when experimental AI is enabled.</p></div>
-              <div><span>02</span><p>Local keyword-based lookup in the reference cache.</p></div>
-              <div><span>03</span><p>Local profiles and assessment storage.</p></div>
-              <div><span>04</span><p>No cloud inference is required by the configured assessment path.</p></div>
-            </div>
-            <div class="offline-column constraints-column">
-              <p class="offline-column-label"><i class="signal-caution"></i> ENGINEERING CONSTRAINTS</p>
-              <div><span>01</span><p>Model size and inference speed depend on device hardware.</p></div>
-              <div><span>02</span><p>Reference excerpts are limited to the sources collected in the local cache.</p></div>
-              <div><span>03</span><p>Spacecraft processor and radiation requirements are not demonstrated.</p></div>
-              <div><span>04</span><p>A separate cache-refresh utility can request public references over HTTPS.</p></div>
-            </div>
-          </div>
-          <div class="network-path"><span>ASSESSMENT</span><i></i><b>LOCAL DEVICE</b><i></i><span>MODEL + CACHE + PROFILE</span><em>OPTIONAL NETWORK: REFERENCE REFRESH ONLY</em></div>
-        </div>
-      </section>
-
-      <section class="responsibility section-pad" id="responsibility">
-        <div class="section-wrap">
-          <div class="section-kicker"><span>08</span><i></i> PROJECT LIMITATIONS</div>
-          <div class="section-heading responsibility-heading">
-            <h2>Engineering responsibly<br />means knowing <span>the limits.</span></h2>
-            <p>Here’s what the current build can do, and where there’s room to grow.</p>
-          </div>
-          <div class="limit-grid">
-            <article class="limit-item"><span class="limit-number">01</span><span class="limit-marker marker-amber"></span><h3>AI response quality</h3><p>Like other AI tools, generated answers can sometimes be wrong or miss important context, so they need human review.</p></article>
-            <article class="limit-item"><span class="limit-number">02</span><span class="limit-marker marker-blue"></span><h3>Identity matching</h3><p>Face-template matching can help select a profile, but it is not a full identity-verification system.</p></article>
-            <article class="limit-item"><span class="limit-number">03</span><span class="limit-marker marker-blue"></span><h3>Local data protection</h3><p>Assessment payloads use AES-256-GCM. Face templates and separately stored keys have different protections.</p></article>
-            <article class="limit-item"><span class="limit-number">04</span><span class="limit-marker marker-amber"></span><h3>Hardware matters</h3><p>Model speed, memory use, and reliability depend on the device. Spaceflight hardware has not been tested.</p></article>
-          </div>
-        </div>
-      </section>
-
-      <section class="roadmap section-pad" id="roadmap">
-        <div class="section-wrap">
-          <div class="section-kicker"><span>09</span><i></i> RESEARCH & FUTURE DEVELOPMENT</div>
-          <div class="section-heading">
-            <h2>From prototype to<br /><span>a more capable system.</span></h2>
-            <p>Ideas for where the project could go next, based on team priorities and testing.</p>
-          </div>
-          <div class="roadmap-columns">
-            <article class="roadmap-column current">
-              <p class="roadmap-status"><i></i> CURRENT PROTOTYPE</p>
-              <h3>What’s in the project</h3>
-              <ul>
-                <li>Structured symptom and health-history intake</li>
-                <li>Local C++ application architecture</li>
-                <li>Optional local language-model inference</li>
-                <li>Keyword-based local reference lookup</li>
-                <li>Touchscreen and configured voice interaction</li>
-                <li>Local profiles and limited payload encryption</li>
-                <li>Experimental pulse-sensor firmware</li>
-              </ul>
-            </article>
-            <article class="roadmap-column exploring">
-              <p class="roadmap-status"><i></i> EXPERIMENTAL CAPABILITIES</p>
-              <h3>What’s being explored</h3>
-              <ul>
-                <li>Preliminary text generated by local language models</li>
-                <li>Face-template matching for profile selection</li>
-                <li>Configurable local speech processing</li>
-              </ul>
-            </article>
-            <article class="roadmap-column future-work">
-              <p class="roadmap-status"><i></i> FUTURE RESEARCH DIRECTIONS</p>
-              <h3>Questions for next</h3>
-              <ul>
-                <li>Improve response consistency and output checks</li>
-                <li>Expand and evaluate reference material</li>
-                <li>Strengthen privacy and security protections</li>
-                <li>Systematic safety and usability evaluation</li>
-                <li>Performance on constrained hardware</li>
-                <li>Sensor integration and appropriate expert review</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="team-section section-pad" id="team">
+      <section class="team section-pad" id="team">
         <div class="section-wrap team-layout">
-          <div class="team-intro">
-            <div class="section-kicker"><span>10</span><i></i> PROJECT CONTEXT</div>
-            <h2>Built through<br /><span>curiosity & iteration.</span></h2>
-            <p>Doctor AI is a student engineering exploration developed in the NASA HUNCH project context.</p>
+          <div>
+            <div class="section-label"><span>04</span> OUR NASA HUNCH PROJECT</div>
+            <h2>Student ideas,<br /><em>built together.</em></h2>
+            <p class="team-description">
+              Doctor AI is a student engineering project from Gladys Porter Early College
+              High School. We are learning through research, building, and testing.
+            </p>
           </div>
-          <div class="team-record">
-            <div class="record-heading"><span>PROJECT RECORD</span><span>2026 — 2027</span></div>
-            <div class="record-row"><span>PROJECT</span><b>NASA HUNCH · Doctor AI</b></div>
-            <div class="record-row"><span>SCHOOL</span><b>Gladys Porter Early College High School</b></div>
-            <div class="record-row team-members"><span>PROJECT TEAM</span><b>Krystal Olivarez<br />Kimora Lee<br />Ramon Torres</b></div>
-            <div class="record-row"><span>ADVISORS</span><b>Ms. Cortez · Mrs. Vaquez</b></div>
+          <div class="team-details">
+            <div><span>PROJECT</span><b>NASA HUNCH · Doctor AI</b></div>
+            <div><span>TEAM</span><b>Krystal Olivarez<br />Kimora Lee<br />Ramon Torres</b></div>
+            <div><span>SCHOOL</span><b>Gladys Porter Early College High School</b></div>
+            <div><span>PROJECT YEAR</span><b>2026–2027</b></div>
           </div>
         </div>
-      </section>
-
-      <section class="closing">
-        <div class="closing-grid" aria-hidden="true"></div>
-        <div class="closing-content">
-          <p class="eyebrow"><span class="status-dot"></span> PREPARATION FOR COMMUNICATION-CONSTRAINED ENVIRONMENTS</p>
-          <h2>The future of exploration<br />demands <span>better preparation.</span></h2>
-          <p>
-            Doctor AI is an engineering exploration of how local computing,
-            structured health information, and experimental AI could contribute to
-            medical-assistance research.
-          </p>
-          <a class="button button-bright" href="#system">Explore the architecture <span aria-hidden="true">↑</span></a>
-        </div>
-        <div class="closing-aside">DOCTOR AI<br />ENGINEERING EXPLORATION</div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <a class="wordmark" href="#top">DOCTOR <span>AI</span></a>
-      <div class="footer-context"><span>NASA HUNCH PROJECT</span><span>2026–2027</span><span>GLADYS PORTER ECHS</span></div>
-      <nav class="footer-links" aria-label="Footer navigation">
-        <a href="#mission">Mission</a><a href="#system">System</a><a href="#engineering">Engineering</a><a href="#team">Project</a>
-      </nav>
+      <a class="wordmark" href="#top"><span class="wordmark-mark" aria-hidden="true">D</span><span>DOCTOR <b>AI</b></span></a>
+      <p>A NASA HUNCH student engineering project.</p>
+      <a href="#top">Back to top ↑</a>
     </footer>
   </body>
 </html>
