@@ -1328,6 +1328,9 @@ a:focus-visible, button:focus-visible {
 .project-gallery figcaption { min-height: 78px; border-color: var(--newsprint-red-bright); }
 .project-gallery figcaption b { color: var(--dp-color-ink); font: 700 20px var(--dp-typography-display); }
 .project-gallery figcaption span { color: var(--dp-color-ink-secondary); font-size: var(--dp-typography-reading-compact); }
+.project-gallery figure.gallery-video-feature { grid-column: span 2; }
+.gallery-video-frame { background: #171717; }
+.gallery-video { display: block; width: 100%; max-height: 100%; object-fit: contain; }
 
 .team { color: var(--dp-color-ink); background: var(--dp-color-ground-muted); }
 .team h2 { color: var(--dp-color-ink); }
@@ -1463,7 +1466,7 @@ a:focus-visible, button:focus-visible {
   .hardware-items { grid-template-columns: 1fr; }
   .hardware-items > div, .hardware-items > div:nth-child(even) { grid-template-columns: 1fr; gap: 4px; padding: 13px 0; border-left: 0; }
   .project-gallery { grid-template-columns: 1fr; }
-  .project-gallery figure:nth-child(n) { border-left: 0; }
+  .project-gallery figure:nth-child(n) { grid-column: auto; border-left: 0; }
   .gallery-image, .project-gallery figure:first-child .gallery-image { height: auto; min-height: 180px; max-height: 300px; }
   .project-gallery img { height: auto; min-height: 180px; max-height: 300px; }
   .team-details > div { grid-template-columns: 110px 1fr; gap: 10px; }
