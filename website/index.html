@@ -12,8 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=12" />
-    <script src="script.js?v=2" defer></script>
+    <link rel="stylesheet" href="styles.css?v=13" />
+    <script src="script.js?v=3" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -78,6 +78,79 @@
           </div>
         </div>
         <div class="hero-bottom"><span>BUILT BY STUDENTS</span><span>GLADYS PORTER EARLY COLLEGE HIGH SCHOOL</span><span>2026–2027</span></div>
+      </section>
+
+      <section class="mission-exhibit" aria-labelledby="mission-exhibit-title">
+        <div class="mission-exhibit__inner">
+          <div class="mission-exhibit__visual">
+            <p class="mission-exhibit__eyebrow"><span>FIG. 01</span> ENGINEERING BRIEF</p>
+            <figure class="mission-exhibit__figure">
+              <div class="mission-exhibit__frame">
+                <img
+                  src="assets/doctorai%20prototype.png"
+                  alt="Doctor AI student prototype with a touchscreen, keyboard, camera, and connected sensor board"
+                  loading="lazy"
+                />
+                <span class="mission-exhibit__reticle" aria-hidden="true">+</span>
+                <span class="mission-exhibit__image-label">DOCTOR AI / PROTOTYPE</span>
+              </div>
+              <figcaption>STUDENT-BUILT HARDWARE <span>·</span> TOUCHSCREEN · CAMERA · SENSOR EXPERIMENTS</figcaption>
+            </figure>
+          </div>
+
+          <div class="mission-exhibit__brief">
+            <p class="mission-exhibit__eyebrow">MISSION SYSTEM <span>/</span> RESPIRATORY SUPPORT</p>
+            <h2 id="mission-exhibit-title">Care guidance for the communication gap.</h2>
+            <p class="mission-exhibit__intro">
+              Doctor AI explores how an onboard tool could help a crew member organize
+              respiratory symptoms and review possible next steps when real-time contact is limited.
+            </p>
+
+            <dl class="mission-exhibit__specs" aria-label="Project at a glance">
+              <div><dt>SYSTEM SCOPE</dt><dd>Respiratory</dd></div>
+              <div><dt>INFERENCE</dt><dd>Local model</dd></div>
+              <div><dt>INPUT</dt><dd>Guided choices</dd></div>
+            </dl>
+
+            <div class="mission-exhibit__explorer">
+              <div class="mission-exhibit__controls" role="group" aria-label="Explore the project brief">
+                <button
+                  type="button"
+                  data-brief-button
+                  data-number="01"
+                  data-title="Designed for the communication gap"
+                  data-copy="The concept focuses on helping a crew member organize symptoms when real-time contact with Earth is limited."
+                  aria-pressed="true"
+                >Mission</button>
+                <button
+                  type="button"
+                  data-brief-button
+                  data-number="02"
+                  data-title="Answers meet local references"
+                  data-copy="A guided respiratory check-in provides context for a locally run model and relevant medical-reference excerpts."
+                  aria-pressed="false"
+                >System</button>
+                <button
+                  type="button"
+                  data-brief-button
+                  data-number="03"
+                  data-title="Support, not a diagnosis"
+                  data-copy="The prototype offers possible explanations for review. It does not replace medical judgment or established onboard protocol."
+                  aria-pressed="false"
+                >Boundary</button>
+              </div>
+
+              <div class="mission-exhibit__readout" aria-live="polite" aria-atomic="true">
+                <p class="mission-exhibit__readout-index">BRIEF <span data-brief-number>01</span> / 03</p>
+                <h3 data-brief-title>Designed for the communication gap</h3>
+                <p data-brief-copy>
+                  The concept focuses on helping a crew member organize symptoms when
+                  real-time contact with Earth is limited.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="project section-pad" id="project">
