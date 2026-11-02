@@ -236,6 +236,8 @@ h2 em, h1 em { color: var(--blue); font-weight: 400; }
 .site-footer .wordmark-mark { color: var(--navy); background: white; }
 .site-footer .wordmark b { color: #9ed1f5; }
 .site-footer p { margin: 0; color: #cad9e6; font-size: 13px; }
+.site-footer .copyright-notice { display: block; margin-top: 5px; font-size: 10px; line-height: 1.5; }
+.site-footer .copyright-notice a { text-decoration: underline; text-underline-offset: 2px; }
 .site-footer > a:last-child { display: inline-flex; align-items: center; gap: 5px; color: white; font-size: 13px; }
 .site-footer > a:last-child:hover { color: #ffb8ba; }
 .menu-toggle svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: 1.6; }

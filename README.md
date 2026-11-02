@@ -8,6 +8,10 @@ Visit the website: [Doctor AI](https://yamert34-glitch.github.io/DoctorAI/)
 
 The site covers the project's purpose, how the prototype works, and the engineering behind it. The website is made with HTML, CSS, and JavaScript.
 
+## Copyright and reuse
+
+The original project materials are viewable but are not licensed for reuse without written permission. See the [viewing-only notice](./LICENSE). GitHub's platform terms and applicable law may still provide access rights, and the notice cannot technically prevent downloads or forks of this public repository.
+
 ## This repository
 
 - `website/` contains the website files.
