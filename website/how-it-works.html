@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=10" />
+    <link rel="stylesheet" href="styles.css?v=11" />
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -32,7 +32,7 @@
         <div class="section-wrap">
           <div class="section-label"><span>01</span> THE WORKFLOW</div>
           <h1>From symptoms to<br /><em>an assessment.</em></h1>
-          <p>The working flow gathers health information, consults a local language model with medical-reference context, then presents an assessment for review.</p>
+          <p>A guided respiratory check-in turns symptom choices into a short, local assessment.</p>
         </div>
       </section>
       <section class="approach section-pad" id="approach">
@@ -40,36 +40,48 @@
           <div class="section-label"><span>HOW IT WORKS</span></div>
           <div class="approach-heading">
             <h2>A guided check-in,<br /><em>step by step.</em></h2>
-            <p>The local LLM uses questionnaire answers, its system instructions, and medical-reference excerpts to generate possible explanations and steps to consider.</p>
+            <p>Choose a respiratory symptom, follow focused choices, then review a possible explanation with local references.</p>
           </div>
           <ol class="steps">
             <li><span class="step-number">01</span><div><h3>Choose a profile</h3><p>Start a local profile or select an existing one. Face matching is an experimental profile-selection option.</p></div></li>
-            <li><span class="step-number">02</span><div><h3>Answer guided questions</h3><p>Share symptoms, when they began, relevant history, medications, and other requested details.</p></div></li>
-            <li><span class="step-number">03</span><div><h3>Generate an LLM assessment</h3><p>The local language model considers the answers alongside its system instructions and medical-reference excerpts, then suggests possible conditions and next steps.</p></div></li>
-            <li><span class="step-number">04</span><div><h3>Review and follow protocol</h3><p>Review the AI-generated assessment as a possibility, not a certainty. Follow onboard medical protocol for care decisions.</p></div></li>
+            <li><span class="step-number">02</span><div><h3>Choose respiratory symptoms</h3><p>Pick a common symptom, then narrow it with follow-up choices. “Other” lets you type or speak instead.</p></div></li>
+            <li><span class="step-number">03</span><div><h3>Review the assessment</h3><p>The local model considers the selected answers and relevant reference excerpts. Its suggestions are possibilities, not diagnoses.</p></div></li>
+            <li><span class="step-number">04</span><div><h3>Review and follow protocol</h3><p>The output is not a diagnosis. Follow onboard medical protocol for care decisions.</p></div></li>
           </ol>
+          <div class="workflow-evidence">
+            <figure class="evidence-figure">
+              <img src="assets/PreviewOfTheScreenUi.png" alt="Touchscreen start page for the Doctor AI assessment" loading="lazy" />
+              <figcaption><b>Touchscreen check-in</b><span>The assessment starts on the device; respiratory choices follow.</span></figcaption>
+            </figure>
+            <figure class="evidence-figure">
+              <video controls preload="metadata" playsinline aria-label="Terminal recording of the local Doctor AI assessment flow">
+                <source src="assets/TerminalTest.mp4" type="video/mp4" />
+                Your browser does not support embedded video.
+              </video>
+              <figcaption><b>Assessment walkthrough</b><span>Local run using example answers.</span></figcaption>
+            </figure>
+          </div>
           <div class="intake-detail">
             <div class="section-label"><span>WHAT THE CHECK-IN COVERS</span></div>
             <h3>Enough context to make the answers useful.</h3>
             <div class="intake-columns">
-              <div><b>Current concern</b><p>What the user is feeling, when it began, whether it is constant or comes and goes, and what makes it better or worse.</p></div>
-              <div><b>Related symptoms</b><p>Other symptoms happening at the same time, so the assessment has more than one isolated description.</p></div>
-              <div><b>Personal context</b><p>Age, current medications, relevant medical history, and—when the sensor is available—a heart-rate reading.</p></div>
+              <div><b>Respiratory symptoms</b><p>Choice-based details, with an “Other” option.</p></div>
+              <div><b>Timing</b><p>Onset, pattern, and triggers.</p></div>
+              <div><b>Context</b><p>Other symptoms, age, medications, and respiratory history.</p></div>
             </div>
           </div>
           <aside class="urgent-path" aria-labelledby="urgent-path-title">
             <div class="urgent-path-label">FAST ESCALATION · PROTOTYPE FEATURE</div>
-            <h3 id="urgent-path-title">Serious phrases can bypass model wait time.</h3>
-            <p>Before a model assessment, a local phrase checker scans answers for configured high-risk terms and symptom phrases—for example, reports involving blood or severe chest and heart symptoms. When it finds a match, the prototype skips model generation and immediately displays a fixed urgent warning: the reported symptoms may indicate a very serious situation, and the user should follow the onboard medical protocol.</p>
-            <p>In current team testing, a model-generated assessment can take about 1 minute 40 seconds. For a matched phrase, the direct-message path is designed to respond in under 1–2 seconds instead of waiting for generation.</p>
-            <p class="urgent-path-caveat">This phrase checker is an early safeguard, not a complete emergency detector: it may miss urgent wording or match a phrase without understanding context. No alert does not mean a situation is safe. Follow onboard protocol whenever symptoms are concerning.</p>
+            <h3 id="urgent-path-title">Some serious phrases bypass model wait time.</h3>
+            <p>A local phrase checker scans answers for configured high-risk terms. A match displays an urgent warning and directs the user to onboard medical protocol.</p>
+            <p class="urgent-path-caveat">This early safeguard can miss urgent wording or misread context. No alert does not mean a situation is safe.</p>
           </aside>
           <div class="assessment-detail">
             <div>
               <div class="section-label"><span>THE MODEL'S ROLE</span></div>
               <h3>Context in. Possible explanations out.</h3>
             </div>
-            <p>The model is one part of the flow, not a replacement for the crew member. The application combines the submitted answers, its system instructions, and relevant local reference excerpts, then asks the model to produce a readable assessment with possible conditions and next steps. In builds with voice enabled, prompts and the response can also be read aloud. The generated text can be incomplete or mistaken, so it remains something to review—not a confirmed diagnosis.</p>
+            <p>The model uses the completed symptom tree and intake with relevant local references. Its answer can be incomplete or mistaken; it is not a diagnosis.</p>
           </div>
           <p class="ai-note">
             <svg class="icon ai-note-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><circle cx="10" cy="10" r="8" /><path d="M10 9v5m0-8h.01" /></svg>

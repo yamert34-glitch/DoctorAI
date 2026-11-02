@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=10" />
+    <link rel="stylesheet" href="styles.css?v=11" />
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -32,7 +32,7 @@
         <div class="section-wrap">
           <div class="section-label"><span>03</span> ENGINEERING & TECHNOLOGY</div>
           <h1>Built with tools<br />we can <em>learn from.</em></h1>
-          <p>The working application combines a guided C++ workflow with local language-model inference. Interface and sensor experiments extend the core assessment.</p>
+          <p>A local C++ application connects the respiratory check-in, model, and reference material.</p>
         </div>
       </section>
       <section class="technology section-pad" id="technology">
@@ -40,12 +40,12 @@
           <div class="section-label"><span>SOFTWARE & HARDWARE</span></div>
           <div class="technology-heading">
             <h2>Local tools,<br /><em>connected in one flow.</em></h2>
-            <p>The interface, questionnaire, local reference material, and language model work together in the C++ application. Hardware experiments add input and output options around that core.</p>
+            <p>The software runs locally; touchscreen and sensor hardware support the prototype.</p>
           </div>
           <div class="build-flow" aria-label="Assessment software flow">
-            <div><span>01</span><b>Collect</b><p>The Qt interface guides a user through symptoms and relevant context.</p></div>
-            <div><span>02</span><b>Prepare</b><p>C++ assessment logic checks the intake and selects relevant local reference excerpts.</p></div>
-            <div><span>03</span><b>Generate</b><p>llama.cpp runs the language model locally to produce a possible assessment and next steps.</p></div>
+            <div><span>01</span><b>Collect</b><p>Choose respiratory symptoms and share context.</p></div>
+            <div><span>02</span><b>Retrieve</b><p>Select relevant local reference excerpts.</p></div>
+            <div><span>03</span><b>Assess</b><p>Run a language model on-device.</p></div>
           </div>
           <div class="technology-list">
             <div class="technology-row"><b>C++17 + CMake</b><span>Main application, assessment flow, and build configuration.</span><small>CORE</small></div>
@@ -58,12 +58,22 @@
           <div class="hardware-inventory">
             <div class="section-label"><span>THE PHYSICAL PROTOTYPE</span></div>
             <h3>A build made for hands-on iteration.</h3>
-            <p class="hardware-intro">The project has been assembled and tested on regular computers with a touchscreen setup. The board and sketches also record separate electronics and enclosure experiments.</p>
+            <p class="hardware-intro">The current build connects a touchscreen computer, camera, and sensor experiments.</p>
+            <div class="hardware-evidence">
+              <figure class="evidence-figure">
+                <img src="assets/doctorai%20prototype.png" alt="Assembled Doctor AI touchscreen, keyboard, camera, and sensor board" loading="lazy" />
+                <figcaption><b>Working prototype</b><span>Touchscreen, camera, and connected sensor board.</span></figcaption>
+              </figure>
+              <figure class="evidence-figure">
+                <img src="assets/raspberrypicasing.jpg" alt="Turquoise 3D model of a proposed Raspberry Pi touchscreen case" loading="lazy" />
+                <figcaption><b>Enclosure study</b><span>Proposed Raspberry Pi case.</span></figcaption>
+              </figure>
+            </div>
             <div class="hardware-items">
-              <div><b>Touchscreen + keyboard</b><span>Read questions, enter answers, and review the generated assessment.</span></div>
-              <div><b>Camera</b><span>Used for experimental profile matching—not for medical image analysis.</span></div>
-              <div><b>ESP32-S3 sensor experiment</b><span>Reads a pulse sensor over serial when configured; a missing or unreliable reading is recorded as unknown.</span></div>
-              <div><b>Case and board studies</b><span>CAD and brainstorm images capture design directions, not proof of flight-ready hardware.</span></div>
+              <div><b>Touchscreen</b><span>Question input and assessment review.</span></div>
+              <div><b>Camera</b><span>Experimental profile matching; no medical image analysis.</span></div>
+              <div><b>ESP32-S3</b><span>Separate pulse-sensor experiment.</span></div>
+              <div><b>Local inference</b><span>Raspberry Pi/Linux is a target environment; onboard spacecraft use is not validated.</span></div>
             </div>
           </div>
           <div class="hardware-note">

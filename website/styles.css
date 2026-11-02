@@ -333,6 +333,43 @@ h2 em, h1 em { color: var(--blue); font-weight: 400; }
   }
 }
 
+.workflow-evidence, .hardware-evidence {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--dp-spacing-grid-gap);
+  margin-top: 30px;
+}
+.evidence-figure {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid currentColor;
+  background: rgba(255, 255, 255, .08);
+}
+.evidence-figure > img, .evidence-figure > video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #e7e8e9;
+}
+.evidence-figure figcaption {
+  display: grid;
+  gap: 2px;
+  padding: 12px 14px;
+  border-top: 1px solid currentColor;
+}
+.evidence-figure figcaption b { font-size: 17px; }
+.evidence-figure figcaption span { font-size: var(--dp-typography-reading-compact); }
+.workflow-evidence .evidence-figure figcaption,
+.hardware-evidence .evidence-figure figcaption { color: #fff; }
+.review-evidence { align-self: start; }
+.review-evidence > img { aspect-ratio: 4 / 3; object-fit: cover; }
+
+@media (max-width: 760px) {
+  .workflow-evidence, .hardware-evidence { grid-template-columns: 1fr; gap: 18px; }
+}
+
 .header-identity {
   display: flex;
   min-width: 0;
