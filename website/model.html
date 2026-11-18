@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="How the Doctor AI respiratory model was fine-tuned from Qwen2.5-0.5B-Instruct, every model file produced, and how each version scored on a 102-case test suite."
+    />
+    <meta name="theme-color" content="#123d79" />
+    <title>The model | Doctor AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=19" />
+    <script src="script.js?v=3" defer></script>
+  </head>
+  <body class="model-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-identity">
+        <a class="wordmark" href="index.html#top" aria-label="Doctor AI home"><span class="wordmark-mark" aria-hidden="true">D</span><span>DOCTOR <b>AI</b></span></a>
+      </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Toggle navigation</span><svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M4 7h16M4 17h16" /></svg></button>
+      <nav class="site-nav" id="site-nav" aria-label="Project pages">
+        <a href="index.html">Overview</a><a href="how-it-works.html">How it works</a><a href="design-process.html">Design process</a><a href="technology.html">Technology</a><a href="model.html" aria-current="page">The model</a><a href="team.html">Our team</a>
+      </nav>
+      <a class="header-link" href="index.html#project">NASA HUNCH <svg class="icon" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M5 11 11 5M5 5h6v6" /></svg></a>
+    </header>
+
+    <main id="main">
+      <section class="page-lead section-pad" id="top">
+        <div class="section-wrap">
+          <div class="section-label"><span>04</span> MODEL DEVELOPMENT</div>
+          <h1>Teaching a small model<br />to <em>answer carefully.</em></h1>
+          <p>
+            Doctor AI runs a 0.5-billion-parameter Qwen model that we adapted ourselves. This page
+            records what we trained it on, every model file we produced, and how each version scored
+            on the same test suite.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-pad" aria-labelledby="training-title">
+        <div class="section-wrap">
+          <div class="section-label"><span>01</span> HOW IT WAS FINE-TUNED</div>
+          <div class="technology-heading">
+            <h2 id="training-title">One base model,<br /><em>a small adapter.</em></h2>
+            <p>
+              We started from the public Qwen2.5-0.5B-Instruct weights and trained a Low-Rank
+              Adapter (LoRA) on top of them. The base weights stay frozen; only a small set of new
+              parameters is learned.
+            </p>
+          </div>
+
+          <dl class="model-specs" aria-label="Fine-tuning configuration">
+            <div><dt>Base model</dt><dd>Qwen2.5-0.5B-Instruct</dd><span>0.49B parameters, public weights</span></div>
+            <div><dt>Method</dt><dd>LoRA, rank 8</dd><span>Alpha 16, dropout 0.05, on q_proj and v_proj</span></div>
+            <div><dt>Trainable</dt><dd>540,672 params</dd><span>About 0.1% of the model</span></div>
+            <div><dt>Hardware</dt><dd>PyTorch MPS</dd><span>Three epochs on an Apple Silicon Mac</span></div>
+          </dl>
+
+          <div class="model-two-col">
+            <div>
+              <h3>What we trained it on</h3>
+              <p>
+                The data is synthetic. Each example is a chat-style record with an intake, a
+                short reference excerpt, and an authored target answer. We wrote the targets to
+                practise three things: one sentence of assessment, one sentence of evidence, and a
+                citation that matches the excerpt that was actually supplied.
+              </p>
+              <p>
+                The excerpts come from 16 MedlinePlus respiratory summaries in our local reference
+                cache. The examples deliberately include uncertain cases and evidence limits, not
+                diagnoses or treatment instructions. They are not clinical labels, and the
+                validation split is too small to prove generalization.
+              </p>
+            </div>
+            <div>
+              <h3>Why a 0.5B model</h3>
+              <p>
+                The target is a Raspberry Pi–class device, so memory and latency decide the model
+                size. We also tested a much larger medical model: its file was about 2.49 GB and its
+                mean response time was roughly 4.9× slower on the Mac. That is not a practical
+                starting point for an onboard tool.
+              </p>
+              <p>
+                A 0.5B model is small enough to quantize under half a gigabyte, but it also makes
+                mistakes a larger model would avoid. Most of the engineering on this page is about
+                catching those mistakes rather than assuming they will not happen.
+              </p>
+            </div>
+          </div>
+
+          <div class="model-table-wrap">
+            <table class="model-table">
+              <caption>Training loss by adapter. Lower values only mean a better fit to this small synthetic set.</caption>
+              <thead>
+                <tr><th>Adapter</th><th class="num">Examples</th><th class="num">Train start</th><th class="num">Train end</th><th class="num">Val start</th><th class="num">Val end</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><b>v1</b></td><td class="num">24 / 8</td><td class="num">1.5688</td><td class="num">0.6892</td><td class="num">1.1659</td><td class="num">0.4795</td></tr>
+                <tr><td><b>v2</b></td><td class="num">12 / 4</td><td class="num">1.9738</td><td class="num">1.4982</td><td class="num">1.5006</td><td class="num">1.1136</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="model-note">
+            <p><b>Merge and export.</b> The adapter was merged into the fp16 base weights, converted to GGUF, and then quantized. The quantizer matters more than expected here — see what went wrong below.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="model-band section-pad" aria-labelledby="files-title">
+        <div class="section-wrap">
+          <div class="section-label"><span>02</span> EVERY MODEL FILE</div>
+          <div class="technology-heading">
+            <h2 id="files-title">Five files,<br /><em>one lineage.</em></h2>
+            <p>
+              Each row is a model file that still exists in the project. Sizes are the files
+              themselves; the quantization column is what the tensors actually are, not what the
+              filename claims.
+            </p>
+          </div>
+          <div class="model-table-wrap">
+            <table class="model-table">
+              <caption>Model files produced from the same base weights.</caption>
+              <thead>
+                <tr><th>File</th><th>Adapter</th><th>Quantization</th><th class="num">Size</th><th>Role</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><code>qwen2.5-0.5b-instruct-q4_k_m.gguf</code></td><td>—</td><td>Q4_K_M</td><td class="num">379.4 MB</td><td>Baseline</td></tr>
+                <tr><td><code>qwen2.5-0.5b-assessment-ft-q4_k_m.gguf</code></td><td><b>v1</b></td><td>Q4_K_M</td><td class="num">379.4 MB</td><td>First adapter, superseded</td></tr>
+                <tr><td><code>qwen2.5-0.5b-assessment-ft-v2-q4_k_m.gguf</code></td><td><b>v2</b></td><td>Named Q4_K_M, 144 of 290 tensors fell back to Q5_0/Q8_0</td><td class="num">379.4 MB</td><td>Superseded export</td></tr>
+                <tr><td><code>qwen2.5-0.5b-assessment-ft-v2-q8attn.gguf</code></td><td><b>v2</b></td><td>Q4_K_M body with attn_q/attn_v at Q8_0</td><td class="num">386.8 MB</td><td>Pi build</td></tr>
+                <tr><td><code>qwen2.5-0.5b-assessment-ft-v2-f16attn.gguf</code></td><td><b>v2</b></td><td>Q4_K_M body with attn_q/attn_v at F16</td><td class="num">406.4 MB</td><td>Mac reference</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad" aria-labelledby="results-title">
+        <div class="section-wrap">
+          <div class="section-label"><span>03</span> TEST RESULTS</div>
+          <div class="technology-heading">
+            <h2 id="results-title">The same 102 cases,<br /><em>every model.</em></h2>
+            <p>
+              All five files ran through the same executable, the same reference cache, and the
+              same 102-case suite. The suite covers urgent phrases, negated symptoms, ordinary
+              respiratory complaints, vague intakes, family-history bait, medication names, and
+              out-of-scope complaints.
+            </p>
+          </div>
+
+          <div class="model-table-wrap">
+            <table class="model-table">
+              <caption>A case passes when routing, response completeness, citation presence, negation handling, scope, and medication filtering are all correct.</caption>
+              <thead>
+                <tr><th>Model file</th><th class="num">Cases passed</th><th class="num">Routing errors</th><th class="num">Real assessments</th><th class="num">Topic match</th><th class="num">Mean time</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><b>Base Qwen2.5-0.5B-Instruct</b><small><code>qwen2.5-0.5b-instruct-q4_k_m.gguf</code></small></td><td class="num">102/102</td><td class="num">0</td><td class="num">33/74</td><td class="num">10/24</td><td class="num">2.32 s</td></tr>
+                <tr><td><b>v1 LoRA</b><small><code>qwen2.5-0.5b-assessment-ft-q4_k_m.gguf</code></small></td><td class="num">102/102</td><td class="num">0</td><td class="num">12/74</td><td class="num">3/24</td><td class="num">2.11 s</td></tr>
+                <tr><td><b>v2 LoRA Q4_K_M</b><small><code>qwen2.5-0.5b-assessment-ft-v2-q4_k_m.gguf</code></small></td><td class="num">101/102</td><td class="num">0</td><td class="num">49/74</td><td class="num">15/24</td><td class="num">2.96 s</td></tr>
+                <tr><td><b>v2 Q8_0 attention</b><small><code>qwen2.5-0.5b-assessment-ft-v2-q8attn.gguf</code></small></td><td class="num">102/102</td><td class="num">0</td><td class="num">48/74</td><td class="num">12/24</td><td class="num">2.62 s</td></tr>
+                <tr><td><b>v2 F16 attention</b><small><code>qwen2.5-0.5b-assessment-ft-v2-f16attn.gguf</code></small></td><td class="num">102/102</td><td class="num">0</td><td class="num">48/74</td><td class="num">13/24</td><td class="num">2.65 s</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <figure class="model-chart">
+            <figcaption>
+              <h3>Assessment quality by model</h3>
+              <p>Two signals that actually separate the files. The first is how often a non-urgent case produced a real, cited assessment instead of a fallback. The second is how often that assessment's evidence named the condition we expected for the case. The structural pass rate is in the table above; every file met it on almost every case, so it does not separate them.</p>
+              <div class="chart-legend">
+                <span><i class="key-pass" aria-hidden="true"></i>Produced an assessment (of 74)</span>
+                <span><i class="key-topic" aria-hidden="true"></i>Evidence named the condition (of 24)</span>
+              </div>
+            </figcaption>
+            <div class="chart-body">
+              <div class="chart-row"><div class="chart-label">Base Qwen2.5-0.5B-Instruct<small>Baseline · 2.32 s mean</small></div><div class="chart-tracks"><div class="chart-bar"><i style="--value:44.6%"></i></div><div class="chart-bar topic"><i style="--value:41.7%"></i></div></div><div class="chart-value">45%<br>42%</div></div>
+              <div class="chart-row"><div class="chart-label">v1 LoRA<small>First adapter, superseded · 2.11 s mean</small></div><div class="chart-tracks"><div class="chart-bar"><i style="--value:16.2%"></i></div><div class="chart-bar topic"><i style="--value:12.5%"></i></div></div><div class="chart-value">16%<br>12%</div></div>
+              <div class="chart-row"><div class="chart-label">v2 LoRA Q4_K_M<small>Superseded export · 2.96 s mean</small></div><div class="chart-tracks"><div class="chart-bar"><i style="--value:66.2%"></i></div><div class="chart-bar topic"><i style="--value:62.5%"></i></div></div><div class="chart-value">66%<br>62%</div></div>
+              <div class="chart-row"><div class="chart-label">v2 Q8_0 attention<small>Pi build · 2.62 s mean</small></div><div class="chart-tracks"><div class="chart-bar"><i style="--value:64.9%"></i></div><div class="chart-bar topic"><i style="--value:50.0%"></i></div></div><div class="chart-value">65%<br>50%</div></div>
+              <div class="chart-row"><div class="chart-label">v2 F16 attention<small>Mac reference · 2.65 s mean</small></div><div class="chart-tracks"><div class="chart-bar"><i style="--value:64.9%"></i></div><div class="chart-bar topic"><i style="--value:54.2%"></i></div></div><div class="chart-value">65%<br>54%</div></div>
+            </div>
+          </figure>
+
+            <div class="model-note">
+              <p><b>How to read this.</b> The base model produced a real, cited assessment in 33 of 74 non-urgent cases. The first adapter dropped that to 12 — a regression, not an improvement. All three v2 files sit at 48–49. Topic match moved much less: 10 of 24 for base, 3 of 24 for v1, and 12–15 of 24 for v2. So the second adapter mostly made the model more willing to answer in the required shape; it did not make it much better at naming the right condition. A one-case difference between the v2 files is noise, not a ranking.</p>
+            </div>
+
+        </div>
+      </section>
+
+      <section class="model-band section-pad" aria-labelledby="problems-title">
+        <div class="section-wrap">
+          <div class="section-label"><span>04</span> WHAT WENT WRONG</div>
+          <div class="technology-heading">
+            <h2 id="problems-title">Each version failed<br /><em>differently.</em></h2>
+            <p>
+              A higher pass rate was not always a better model. These are the problems we actually
+              found, in the order we found them.
+            </p>
+          </div>
+
+          <ol class="model-notes">
+            <li>
+              <span>v1</span>
+              <div>
+                <h3>Fewer fallbacks, worse evidence.</h3>
+                <p>
+                  The first adapter cut format fallbacks from eight of eight to one of eight, which
+                  looked like a clear win. Reading the outputs showed otherwise: the wheezing case
+                  cited a chest-pain excerpt, and cough cases cited shortness-of-breath excerpts.
+                  The validator only checked that a citation ID existed in the supplied context; it
+                  never checked that the excerpt supported the sentence. On the current 102-case
+                  suite it is the weakest file we have: only 12 of 74 non-urgent cases produced a
+                  real assessment, against 33 for the untuned base model. Training on 24 examples
+                  made the model more likely to bail out or drift, not more accurate.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span>v2</span>
+              <div>
+                <h3>Training on twelve examples taught caution, not grounding.</h3>
+                <p>
+                  The second adapter used a smaller, more cautious dataset. It reduced fallbacks
+                  again, but manual review still found a chest-pain citation on an upper-respiratory
+                  case, an acute-versus-chronic bronchitis mismatch, and one answer that only
+                  repeated the intake. Lower loss measured fit to our own examples, not medical
+                  correctness.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span>Q4</span>
+              <div>
+                <h3>The filename said Q4_K_M. The tensors were not.</h3>
+                <p>
+                  The first v2 export was labelled Q4_K_M, but this model's attention head dimension
+                  (896) is not divisible by the block size the format needs, so the quantizer fell
+                  back for 144 of 290 tensors. Measured against the fp16 reference, that file was
+                  4.5–4.7% off. Re-exporting the attention tensors at Q8_0 brought the error down to
+                  0.56% — about eight times closer — for only a few megabytes.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span>RAG</span>
+              <div>
+                <h3>“No chest pain” retrieved chest pain.</h3>
+                <p>
+                  The intake sentence “No difficulty breathing, chest pain, or high fever” was fed
+                  into reference retrieval word for word, so <em>Chest Pain</em> ranked as the top
+                  match for a mild congestion case. The fix strips negated spans from the retrieval
+                  query only; the prompt and the stored intake keep the original wording.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span>Gate</span>
+              <div>
+                <h3>The validator was rejecting correct answers.</h3>
+                <p>
+                  The 0.5B model often wrote two assessment sentences and a second evidence
+                  paragraph. The format gate demanded exactly one of each, so correct, cited answers
+                  were replaced with “could not determine”. The application now keeps the cited
+                  sentence, drops the trailing paragraph, and still enforces the two-sentence shape.
+                  Format fallbacks on the suite went from four to zero.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span>Scope</span>
+              <div>
+                <h3>Red flags were being thrown out as off-topic.</h3>
+                <p>
+                  The scope gate read the “not” inside “cannot” as a negation, so “Cannot stand
+                  because of chest pain” lost its red flag and was rejected as non-respiratory.
+                  “I cannot breathe” and “hoarseness” were missing from the vocabulary entirely.
+                  All three now route correctly.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section-pad" aria-labelledby="limits-title">
+        <div class="section-wrap">
+          <div class="section-label"><span>05</span> LIMITS</div>
+          <div class="technology-heading">
+            <h2 id="limits-title">What these numbers<br /><em>do not mean.</em></h2>
+            <p>
+              The suite measures the behaviour of our software pipeline, not medical skill.
+            </p>
+          </div>
+          <div class="model-limits">
+            <div><b>Not a clinical study</b><p>102 synthetic cases written by the team. No patients, no clinicians, no external validation set.</p></div>
+            <div><b>Rubric, not truth</b><p>A pass means the routing, format, citation, and safety rules held. It does not mean the assessment is medically correct.</p></div>
+            <div><b>Grounding is still weak</b><p>Even the best file named the expected condition in its evidence only about half the time. Citation validity is not entailment.</p></div>
+            <div><b>Mac measurements</b><p>All timings come from one Apple Silicon laptop. The Raspberry Pi build has not been benchmarked.</p></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="wordmark" href="index.html#top"><span class="wordmark-mark" aria-hidden="true">D</span><span>DOCTOR <b>AI</b></span></a><p>A NASA HUNCH student engineering project.<small class="copyright-notice">© 2026–2027 Krystal Olivarez, Kimora Lee, and Ramon Torres. <a href="https://github.com/yamert34-glitch/DoctorAI/blob/main/LICENSE">Viewing permitted; reuse requires written permission.</a></small></p><a href="index.html#top">Back to overview <svg class="icon" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M8 14V3m-4 4 4-4 4 4" /></svg></a>
+    </footer>
+  </body>
+</html>

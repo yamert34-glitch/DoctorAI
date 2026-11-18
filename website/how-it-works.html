@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Explore Doctor AI's guided check-in, local language-model assessment, and rapid phrase-based escalation flow." />
+    <meta name="description" content="Explore Doctor AI's respiratory check-in, brief local-model assessment, and prototype warning flow." />
     <meta name="theme-color" content="#123d79" />
     <title>How It Works | Doctor AI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=14" />
+    <link rel="stylesheet" href="styles.css?v=19" />
     <script src="script.js?v=2" defer></script>
   </head>
   <body>
@@ -20,7 +20,7 @@
       </div>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Toggle navigation</span><svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M4 7h16M4 17h16" /></svg></button>
       <nav class="site-nav" id="site-nav" aria-label="Project pages">
-        <a href="index.html">Overview</a><a href="how-it-works.html" aria-current="page">How it works</a><a href="design-process.html">Design process</a><a href="technology.html">Technology</a><a href="team.html">Our team</a>
+        <a href="index.html">Overview</a><a href="how-it-works.html" aria-current="page">How it works</a><a href="design-process.html">Design process</a><a href="technology.html">Technology</a><a href="model.html">The model</a><a href="team.html">Our team</a>
       </nav>
       <a class="header-link" href="index.html#project">NASA HUNCH <svg class="icon" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M5 11 11 5M5 5h6v6" /></svg></a>
     </header>
@@ -37,12 +37,12 @@
           <div class="section-label"><span>HOW IT WORKS</span></div>
           <div class="approach-heading">
             <h2>A guided check-in,<br /><em>step by step.</em></h2>
-            <p>Choose a respiratory symptom, follow focused choices, then review a possible explanation with local references.</p>
+            <p>Choose a respiratory symptom, answer focused questions, then review a brief assessment with local references.</p>
           </div>
           <ol class="steps">
             <li><span class="step-number">01</span><div><h3>Choose a profile</h3><p>Start a local profile or select an existing one. Face matching is an experimental profile-selection option.</p></div></li>
-            <li><span class="step-number">02</span><div><h3>Choose respiratory symptoms</h3><p>Pick a common symptom, then narrow it with follow-up choices. “Other” lets you type or speak instead.</p></div></li>
-            <li><span class="step-number">03</span><div><h3>Review the assessment</h3><p>The local model considers the selected answers and relevant reference excerpts. Its suggestions are possibilities, not diagnoses.</p></div></li>
+            <li><span class="step-number">02</span><div><h3>Choose respiratory symptoms</h3><p>Answer five required symptom questions: the main symptom, a detail, onset, pattern or triggers, and other symptoms. Then answer optional branch follow-ups or submit; the tree has a 15-question limit. “Other” lets you type or speak instead. Age, pulse, family history, and medications are collected afterward.</p></div></li>
+            <li><span class="step-number">03</span><div><h3>Review the assessment</h3><p>The local model uses the answers and relevant reference excerpts to produce a brief assessment and evidence statement. The output is not a diagnosis and may be incomplete or mistaken.</p></div></li>
             <li><span class="step-number">04</span><div><h3>Review and follow protocol</h3><p>The output is not a diagnosis. Follow onboard medical protocol for care decisions.</p></div></li>
           </ol>
           <div class="workflow-evidence">
@@ -64,7 +64,7 @@
             <div class="intake-columns">
               <div><b>Respiratory symptoms</b><p>Choice-based details, with an “Other” option.</p></div>
               <div><b>Timing</b><p>Onset, pattern, and triggers.</p></div>
-              <div><b>Context</b><p>Other symptoms, age, medications, and respiratory history.</p></div>
+              <div><b>Context</b><p>Symptom details, age, pulse, respiratory or family history, and medications.</p></div>
             </div>
           </div>
           <aside class="urgent-path" aria-labelledby="urgent-path-title">
@@ -78,11 +78,11 @@
               <div class="section-label"><span>THE MODEL'S ROLE</span></div>
               <h3>Context in. Possible explanations out.</h3>
             </div>
-            <p>The model uses the completed symptom tree and intake with relevant local references. Its answer can be incomplete or mistaken; it is not a diagnosis.</p>
+            <p>The model uses completed symptom answers and relevant local references to produce a short assessment and evidence statement. Its answer can be incomplete or mistaken; it is not a diagnosis.</p>
           </div>
           <p class="ai-note">
             <svg class="icon ai-note-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><circle cx="10" cy="10" r="8" /><path d="M10 9v5m0-8h.01" /></svg>
-            AI-generated possibilities may be wrong or incomplete. Use the prototype's output as information for review, not as a confirmed diagnosis.
+            AI-generated output may be wrong or incomplete, and invalid output can be withheld. Use the prototype's response as information for review, not as a confirmed diagnosis.
           </p>
         </div>
       </section>
